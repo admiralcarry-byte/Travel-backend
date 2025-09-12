@@ -236,17 +236,19 @@ serviceSchema.pre('save', function(next) {
 
 // Virtual for formatted cost
 serviceSchema.virtual('formattedCost').get(function() {
-  return `${this.currency} ${this.cost.toLocaleString()}`;
+  if (!this.cost || this.cost === undefined) return `${this.currency || 'USD'} 0`;
+  return `${this.currency || 'USD'} ${this.cost.toLocaleString()}`;
 });
 
 // Virtual for formatted selling price
 serviceSchema.virtual('formattedSellingPrice').get(function() {
-  return `${this.currency} ${this.sellingPrice.toLocaleString()}`;
+  if (!this.sellingPrice || this.sellingPrice === undefined) return `${this.currency || 'USD'} 0`;
+  return `${this.currency || 'USD'} ${this.sellingPrice.toLocaleString()}`;
 });
 
 // Virtual for profit margin
 serviceSchema.virtual('profitMargin').get(function() {
-  if (this.cost === 0) return 0;
+  if (!this.sellingPrice || !this.cost || this.cost === 0) return 0;
   return ((this.sellingPrice - this.cost) / this.cost * 100).toFixed(2);
 });
 

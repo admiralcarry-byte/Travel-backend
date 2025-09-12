@@ -167,9 +167,7 @@ const clientSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Indexes for better query performance
-clientSchema.index({ email: 1 });
-clientSchema.index({ passportNumber: 1 });
+// Indexes for better query performance (email and passportNumber already indexed by unique: true)
 clientSchema.index({ phone: 1 });
 clientSchema.index({ status: 1 });
 clientSchema.index({ createdBy: 1 });

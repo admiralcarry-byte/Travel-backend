@@ -90,17 +90,17 @@ const saleSchema = new mongoose.Schema({
   services: [serviceSaleSchema],
   totalSalePrice: {
     type: Number,
-    required: [true, 'Total sale price is required'],
+    default: 0,
     min: [0, 'Total sale price cannot be negative']
   },
   totalCost: {
     type: Number,
-    required: [true, 'Total cost is required'],
+    default: 0,
     min: [0, 'Total cost cannot be negative']
   },
   profit: {
     type: Number,
-    required: [true, 'Profit is required']
+    default: 0
   },
   paymentsClient: [{
     paymentId: {
@@ -386,6 +386,7 @@ saleSchema.statics.getTopClients = function(limit = 10) {
 // Transform output
 saleSchema.methods.toJSON = function() {
   const saleObject = this.toObject();
+  saleObject.id = saleObject._id;
   saleObject.profitMargin = this.profitMargin;
   saleObject.formattedTotalSalePrice = this.formattedTotalSalePrice;
   saleObject.formattedTotalCost = this.formattedTotalCost;

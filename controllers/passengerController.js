@@ -18,7 +18,7 @@ const addPassenger = async (req, res) => {
     }
 
     // Validate required fields
-    const requiredFields = ['name', 'surname', 'dob', 'passportNumber', 'nationality', 'expirationDate'];
+    const requiredFields = ['name', 'surname', 'dob', 'passportNumber', 'nationality', 'expirationDate', 'gender'];
     const missingFields = requiredFields.filter(field => !passengerData[field]);
     
     if (missingFields.length > 0) {
@@ -41,8 +41,9 @@ const addPassenger = async (req, res) => {
       });
     }
 
-    // Add clientId to passenger data
+    // Add clientId and createdBy to passenger data
     passengerData.clientId = clientId;
+    passengerData.createdBy = req.user?.id || req.user?.user?.id;
 
     const passenger = new Passenger(passengerData);
     await passenger.save();
@@ -50,7 +51,11 @@ const addPassenger = async (req, res) => {
     res.status(201).json({
       success: true,
       message: 'Passenger added successfully',
-      data: { passenger }
+      data: { 
+        passenger,
+        _id: passenger._id,
+        id: passenger._id
+      }
     });
 
   } catch (error) {

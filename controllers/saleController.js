@@ -88,6 +88,11 @@ const createSale = async (req, res) => {
       { path: 'createdBy', select: 'username email role' }
     ]);
 
+    console.log('Sale created - Raw sale object:');
+    console.log('_id:', sale._id);
+    console.log('id:', sale.id);
+    console.log('toJSON():', JSON.stringify(sale.toJSON(), null, 2));
+    
     res.status(201).json({
       success: true,
       message: 'Sale created successfully',

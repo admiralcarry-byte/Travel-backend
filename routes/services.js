@@ -10,18 +10,19 @@ const {
   getServiceTypes
 } = require('../controllers/serviceController');
 const { authenticate, requireAdminOrSeller } = require('../middlewares/authMiddleware');
+const { activityLoggers } = require('../middlewares/activityLogMiddleware');
 
 // All service routes require authentication
 router.use(authenticate);
 router.use(requireAdminOrSeller);
 
 // Service CRUD routes
-router.post('/', createService);
+router.post('/', activityLoggers.serviceCreate, createService);
 router.get('/', getAllServices);
 router.get('/types', getServiceTypes);
 router.get('/provider/:providerId', getServicesByProvider);
 router.get('/:id', getService);
-router.put('/:id', updateService);
-router.delete('/:id', deleteService);
+router.put('/:id', activityLoggers.serviceUpdate, updateService);
+router.delete('/:id', activityLoggers.serviceDelete, deleteService);
 
 module.exports = router;

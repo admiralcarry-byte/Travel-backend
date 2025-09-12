@@ -9,6 +9,7 @@ const {
 } = require('../controllers/passengerController');
 const { authenticate, requireAdminOrSeller } = require('../middlewares/authMiddleware');
 const { uploadPassportImage, handleUploadError } = require('../middlewares/uploadMiddleware');
+const { activityLoggers } = require('../middlewares/activityLogMiddleware');
 const path = require('path');
 
 // All passenger routes require authentication
@@ -17,11 +18,11 @@ router.use(requireAdminOrSeller);
 
 // Passenger CRUD routes
 router.get('/:passengerId', getPassenger);
-router.put('/:passengerId', updatePassenger);
-router.delete('/:passengerId', deletePassenger);
+router.put('/:passengerId', activityLoggers.passengerUpdate, updatePassenger);
+router.delete('/:passengerId', activityLoggers.passengerDelete, deletePassenger);
 
 // OCR route for passenger passport data extraction
-router.post('/ocr', uploadPassportImage, handleUploadError, extractPassengerPassportData);
+router.post('/ocr', uploadPassportImage, handleUploadError, activityLoggers.passengerCreate, extractPassengerPassportData);
 
 // Passenger passport image route
 router.get('/:passengerId/passport-image', getPassengerPassportImage);

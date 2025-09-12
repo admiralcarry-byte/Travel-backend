@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Cupo = require('../models/Cupo');
 const Service = require('../models/Service');
 const Sale = require('../models/Sale');
@@ -47,7 +48,7 @@ const createCupo = async (req, res) => {
 
     // Populate service information for response
     await cupo.populate([
-      { path: 'serviceId', select: 'title description type providerId' },
+      { path: 'serviceId', select: 'title description type providerId cost currency' },
       { path: 'serviceId.providerId', select: 'name type' },
       { path: 'createdBy', select: 'username email' }
     ]);
@@ -92,7 +93,15 @@ const getAllCupos = async (req, res) => {
     const query = {};
     
     if (serviceId) {
-      query.serviceId = serviceId;
+      // Validate that serviceId is a valid ObjectId
+      if (mongoose.Types.ObjectId.isValid(serviceId)) {
+        query.serviceId = serviceId;
+      } else {
+        return res.status(400).json({
+          success: false,
+          message: 'Invalid serviceId format. Must be a valid ObjectId.'
+        });
+      }
     }
     
     if (date) {
@@ -109,7 +118,7 @@ const getAllCupos = async (req, res) => {
 
     const cupos = await Cupo.find(query)
       .populate([
-        { path: 'serviceId', select: 'title description type providerId' },
+        { path: 'serviceId', select: 'title description type providerId cost currency' },
         { path: 'serviceId.providerId', select: 'name type' },
         { path: 'createdBy', select: 'username email' }
       ])
@@ -145,7 +154,7 @@ const getCupo = async (req, res) => {
     
     const cupo = await Cupo.findById(id)
       .populate([
-        { path: 'serviceId', select: 'title description type providerId' },
+        { path: 'serviceId', select: 'title description type providerId cost currency' },
         { path: 'serviceId.providerId', select: 'name type contactInfo' },
         { path: 'createdBy', select: 'username email' }
       ]);
@@ -182,7 +191,7 @@ const updateCupo = async (req, res) => {
       updateData,
       { new: true, runValidators: true }
     ).populate([
-      { path: 'serviceId', select: 'title description type providerId' },
+      { path: 'serviceId', select: 'title description type providerId cost currency' },
       { path: 'serviceId.providerId', select: 'name type' },
       { path: 'createdBy', select: 'username email' }
     ]);
@@ -283,8 +292,8 @@ const reserveSeats = async (req, res) => {
       try {
         // Calculate service pricing for the sale
         const serviceSaleData = {
-          serviceId: cupo.serviceId.id,
-          providerId: cupo.serviceId.providerId.id,
+          serviceId: cupo.serviceId._id.toString(),
+          providerId: cupo.serviceId.providerId._id.toString(),
           priceClient: cupo.serviceId.cost,
           costProvider: cupo.serviceId.cost * 0.8, // 20% markup example
           currency: cupo.serviceId.currency || 'USD',
@@ -368,7 +377,7 @@ const getAvailableCupos = async (req, res) => {
 
     const cupos = await Cupo.findAvailable(serviceId, new Date(date), parseInt(minSeats))
       .populate([
-        { path: 'serviceId', select: 'title description type providerId' },
+        { path: 'serviceId', select: 'title description type providerId cost currency' },
         { path: 'serviceId.providerId', select: 'name type' }
       ]);
 
@@ -406,7 +415,7 @@ const getCuposCalendar = async (req, res) => {
 
     const cupos = await Cupo.find(query)
       .populate([
-        { path: 'serviceId', select: 'title description type providerId' },
+        { path: 'serviceId', select: 'title description type providerId cost currency' },
         { path: 'serviceId.providerId', select: 'name type' }
       ])
       .sort({ 'metadata.date': 1 });

@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const { logActivityManually } = require('../middlewares/activityLogMiddleware');
 
 // Generate JWT token
 const generateToken = (userId, role) => {
@@ -63,6 +64,36 @@ const register = async (req, res) => {
 
     // Generate token
     const token = generateToken(user._id, user.role);
+
+    // Manually log the registration activity since req.user is not set in middleware
+    try {
+      await logActivityManually(
+        {
+          id: user._id,
+          username: user.username,
+          email: user.email
+        },
+        'user_registration',
+        'user',
+        `New user registered: ${user.username}`,
+        {
+          ipAddress: req.ip || req.connection.remoteAddress || req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+          userAgent: req.get('User-Agent'),
+          method: req.method,
+          url: req.originalUrl,
+          referer: req.get('Referer'),
+          requestBody: req.body,
+          queryParams: req.query,
+          responseStatus: 201,
+          sessionId: req.sessionID,
+          contentType: req.get('Content-Type'),
+          acceptLanguage: req.get('Accept-Language')
+        }
+      );
+    } catch (logError) {
+      console.error('Failed to log registration activity:', logError);
+      // Don't fail the registration if logging fails
+    }
 
     res.status(201).json({
       success: true,
@@ -132,6 +163,36 @@ const login = async (req, res) => {
     // Generate token
     const token = generateToken(user._id, user.role);
 
+    // Manually log the login activity since req.user is not set in middleware
+    try {
+      await logActivityManually(
+        {
+          id: user._id,
+          username: user.username,
+          email: user.email
+        },
+        'user_login',
+        'user',
+        'User logged in',
+        {
+          ipAddress: req.ip || req.connection.remoteAddress || req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+          userAgent: req.get('User-Agent'),
+          method: req.method,
+          url: req.originalUrl,
+          referer: req.get('Referer'),
+          requestBody: req.body,
+          queryParams: req.query,
+          responseStatus: 200,
+          sessionId: req.sessionID,
+          contentType: req.get('Content-Type'),
+          acceptLanguage: req.get('Accept-Language')
+        }
+      );
+    } catch (logError) {
+      console.error('Failed to log login activity:', logError);
+      // Don't fail the login if logging fails
+    }
+
     res.json({
       success: true,
       message: 'Login successful',
@@ -190,8 +251,53 @@ const getMe = async (req, res) => {
   }
 };
 
+// POST /api/auth/logout
+const logout = async (req, res) => {
+  try {
+    // Log the logout activity
+    await logActivityManually(
+      {
+        id: req.user._id,
+        username: req.user.username,
+        email: req.user.email
+      },
+      'user_logout',
+      'user',
+      'User logged out',
+      {
+        ipAddress: req.ip || req.connection.remoteAddress || req.headers['x-forwarded-for'] || req.socket.remoteAddress,
+        userAgent: req.get('User-Agent'),
+        method: req.method,
+        url: req.originalUrl,
+        referer: req.get('Referer'),
+        requestBody: req.body,
+        queryParams: req.query,
+        responseStatus: 200,
+        responseTime: Date.now() - req.startTime,
+        sessionId: req.sessionID,
+        contentType: req.get('Content-Type'),
+        acceptLanguage: req.get('Accept-Language'),
+        timestamp: new Date().toISOString()
+      }
+    );
+
+    res.json({
+      success: true,
+      message: 'Logout successful'
+    });
+
+  } catch (error) {
+    console.error('Logout error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error during logout'
+    });
+  }
+};
+
 module.exports = {
   register,
   login,
-  getMe
+  getMe,
+  logout
 };

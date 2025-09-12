@@ -1,0 +1,3767 @@
+{
+  "timestamp": "2025-09-11T16:35:08.628Z",
+  "version": "1.0",
+  "collections": {
+    "clients": [
+      {
+        "_id": "68c2e6bab3d2050600570890",
+        "name": "John",
+        "surname": "Smith",
+        "dob": "1965-11-24T17:28:56.286Z",
+        "email": "john.smith@email.com",
+        "phone": "+1-555-0101",
+        "passportNumber": "A1234567",
+        "passportImage": null,
+        "nationality": "Brazilian",
+        "expirationDate": "2030-08-06T18:28:59.724Z",
+        "address": {
+          "street": "123 Main St",
+          "city": "New York",
+          "state": "IL",
+          "country": "United Kingdom",
+          "zipCode": "10001"
+        },
+        "emergencyContact": {
+          "name": "Jane Johnson",
+          "phone": "+1-555-0102",
+          "relationship": "sibling"
+        },
+        "preferences": {
+          "dietary": "vegan",
+          "medical": "none",
+          "specialRequests": "wheelchair accessible"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": true,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": false
+        },
+        "status": "inactive",
+        "totalSpent": 38477,
+        "lastTripDate": "2023-11-28T02:32:13.142Z",
+        "createdBy": "68c2e6b1b3d205060057083d",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      },
+      {
+        "_id": "68c2e6bab3d2050600570891",
+        "name": "Jane",
+        "surname": "Johnson",
+        "dob": "1977-01-16T05:36:38.653Z",
+        "email": "jane.johnson@email.com",
+        "phone": "+1-555-0102",
+        "passportNumber": "B2345678",
+        "passportImage": null,
+        "nationality": "Brazilian",
+        "expirationDate": "2026-02-28T10:50:38.510Z",
+        "address": {
+          "street": "456 Oak Ave",
+          "city": "Los Angeles",
+          "state": "TX",
+          "country": "United States",
+          "zipCode": "10002"
+        },
+        "emergencyContact": {
+          "name": "Michael Williams",
+          "phone": "+1-555-0103",
+          "relationship": "sibling"
+        },
+        "preferences": {
+          "dietary": "vegetarian",
+          "medical": "allergies",
+          "specialRequests": "wheelchair accessible"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": false,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": true
+        },
+        "status": "inactive",
+        "totalSpent": 28747,
+        "lastTripDate": null,
+        "createdBy": "68c2e6b1b3d205060057083e",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      },
+      {
+        "_id": "68c2e6bab3d2050600570892",
+        "name": "Michael",
+        "surname": "Williams",
+        "dob": "1968-01-19T04:29:47.722Z",
+        "email": "michael.williams@email.com",
+        "phone": "+1-555-0103",
+        "passportNumber": "C3456789",
+        "passportImage": null,
+        "nationality": "Brazilian",
+        "expirationDate": "2026-08-25T23:10:29.491Z",
+        "address": {
+          "street": "789 Pine Rd",
+          "city": "Chicago",
+          "state": "IL",
+          "country": "Japan",
+          "zipCode": "10003"
+        },
+        "emergencyContact": {
+          "name": "Sarah Brown",
+          "phone": "+1-555-0104",
+          "relationship": "friend"
+        },
+        "preferences": {
+          "dietary": "vegan",
+          "medical": "allergies",
+          "specialRequests": "ground floor"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": false,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": false
+        },
+        "status": "active",
+        "totalSpent": 48135,
+        "lastTripDate": "2024-07-08T06:41:27.130Z",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      },
+      {
+        "_id": "68c2e6bab3d2050600570893",
+        "name": "Sarah",
+        "surname": "Brown",
+        "dob": "1957-12-07T09:13:25.552Z",
+        "email": "sarah.brown@email.com",
+        "phone": "+1-555-0104",
+        "passportNumber": "D4567890",
+        "passportImage": null,
+        "nationality": "British",
+        "expirationDate": "2029-07-24T16:20:00.774Z",
+        "address": {
+          "street": "321 Elm St",
+          "city": "Houston",
+          "state": "IL",
+          "country": "France",
+          "zipCode": "10004"
+        },
+        "emergencyContact": {
+          "name": "David Jones",
+          "phone": "+1-555-0105",
+          "relationship": "parent"
+        },
+        "preferences": {
+          "dietary": "none",
+          "medical": "allergies",
+          "specialRequests": "quiet room"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": true,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": true
+        },
+        "status": "inactive",
+        "totalSpent": 16462,
+        "lastTripDate": null,
+        "createdBy": "68c2e6b1b3d2050600570841",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      },
+      {
+        "_id": "68c2e6bab3d2050600570894",
+        "name": "David",
+        "surname": "Jones",
+        "dob": "1956-10-31T06:58:43.412Z",
+        "email": "david.jones@email.com",
+        "phone": "+1-555-0105",
+        "passportNumber": "E5678901",
+        "passportImage": null,
+        "nationality": "German",
+        "expirationDate": "2029-09-14T02:12:00.654Z",
+        "address": {
+          "street": "654 Maple Dr",
+          "city": "Phoenix",
+          "state": "IL",
+          "country": "Italy",
+          "zipCode": "10005"
+        },
+        "emergencyContact": {
+          "name": "Emily Garcia",
+          "phone": "+1-555-0106",
+          "relationship": "sibling"
+        },
+        "preferences": {
+          "dietary": "gluten-free",
+          "medical": "mobility assistance",
+          "specialRequests": "quiet room"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": true,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": false
+        },
+        "status": "active",
+        "totalSpent": 39910,
+        "lastTripDate": null,
+        "createdBy": "68c2e6b1b3d205060057083e",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      },
+      {
+        "_id": "68c2e6bab3d2050600570895",
+        "name": "Emily",
+        "surname": "Garcia",
+        "dob": "1986-12-04T11:59:44.747Z",
+        "email": "emily.garcia@email.com",
+        "phone": "+1-555-0106",
+        "passportNumber": "F6789012",
+        "passportImage": null,
+        "nationality": "French",
+        "expirationDate": "2028-08-05T01:57:11.613Z",
+        "address": {
+          "street": "987 Cedar Ln",
+          "city": "Philadelphia",
+          "state": "TX",
+          "country": "Brazil",
+          "zipCode": "10006"
+        },
+        "emergencyContact": {
+          "name": "Robert Miller",
+          "phone": "+1-555-0107",
+          "relationship": "sibling"
+        },
+        "preferences": {
+          "dietary": "none",
+          "medical": "allergies",
+          "specialRequests": "ground floor"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": true,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": false
+        },
+        "status": "inactive",
+        "totalSpent": 21995,
+        "lastTripDate": null,
+        "createdBy": "68c2e6b1b3d205060057083c",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      },
+      {
+        "_id": "68c2e6bab3d2050600570896",
+        "name": "Robert",
+        "surname": "Miller",
+        "dob": "1988-06-07T16:44:13.790Z",
+        "email": "robert.miller@email.com",
+        "phone": "+1-555-0107",
+        "passportNumber": "G7890123",
+        "passportImage": null,
+        "nationality": "Japanese",
+        "expirationDate": "2030-06-23T01:15:55.431Z",
+        "address": {
+          "street": "147 Birch Way",
+          "city": "San Antonio",
+          "state": "TX",
+          "country": "United Kingdom",
+          "zipCode": "10007"
+        },
+        "emergencyContact": {
+          "name": "Lisa Davis",
+          "phone": "+1-555-0108",
+          "relationship": "friend"
+        },
+        "preferences": {
+          "dietary": "vegan",
+          "medical": "mobility assistance",
+          "specialRequests": "ground floor"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": true,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": false
+        },
+        "status": "active",
+        "totalSpent": 31565,
+        "lastTripDate": "2025-02-05T14:31:12.545Z",
+        "createdBy": "68c2e6b1b3d205060057083d",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      },
+      {
+        "_id": "68c2e6bab3d2050600570897",
+        "name": "Lisa",
+        "surname": "Davis",
+        "dob": "1964-09-04T12:21:22.436Z",
+        "email": "lisa.davis@email.com",
+        "phone": "+1-555-0108",
+        "passportNumber": "H8901234",
+        "passportImage": null,
+        "nationality": "Japanese",
+        "expirationDate": "2029-10-15T07:33:11.948Z",
+        "address": {
+          "street": "258 Spruce St",
+          "city": "San Diego",
+          "state": "TX",
+          "country": "Germany",
+          "zipCode": "10008"
+        },
+        "emergencyContact": {
+          "name": "James Rodriguez",
+          "phone": "+1-555-0109",
+          "relationship": "sibling"
+        },
+        "preferences": {
+          "dietary": "vegetarian",
+          "medical": "none",
+          "specialRequests": "ground floor"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": false,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": true
+        },
+        "status": "active",
+        "totalSpent": 3650,
+        "lastTripDate": "2024-09-19T11:08:49.959Z",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      },
+      {
+        "_id": "68c2e6bab3d2050600570898",
+        "name": "James",
+        "surname": "Rodriguez",
+        "dob": "1956-01-26T15:13:19.274Z",
+        "email": "james.rodriguez@email.com",
+        "phone": "+1-555-0109",
+        "passportNumber": "I9012345",
+        "passportImage": null,
+        "nationality": "British",
+        "expirationDate": "2030-01-02T11:16:23.598Z",
+        "address": {
+          "street": "369 Willow Ave",
+          "city": "Dallas",
+          "state": "FL",
+          "country": "Canada",
+          "zipCode": "10009"
+        },
+        "emergencyContact": {
+          "name": "Maria Martinez",
+          "phone": "+1-555-0110",
+          "relationship": "sibling"
+        },
+        "preferences": {
+          "dietary": "none",
+          "medical": "none",
+          "specialRequests": "none"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": true,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": false
+        },
+        "status": "active",
+        "totalSpent": 43833,
+        "lastTripDate": "2024-07-09T21:06:20.459Z",
+        "createdBy": "68c2e6b1b3d205060057083f",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      },
+      {
+        "_id": "68c2e6bab3d2050600570899",
+        "name": "Maria",
+        "surname": "Martinez",
+        "dob": "1988-02-01T18:56:32.042Z",
+        "email": "maria.martinez@email.com",
+        "phone": "+1-555-0110",
+        "passportNumber": "J0123456",
+        "passportImage": null,
+        "nationality": "British",
+        "expirationDate": "2024-05-24T22:36:43.977Z",
+        "address": {
+          "street": "741 Poplar Rd",
+          "city": "San Jose",
+          "state": "FL",
+          "country": "Canada",
+          "zipCode": "10010"
+        },
+        "emergencyContact": {
+          "name": "John Smith",
+          "phone": "+1-555-0101",
+          "relationship": "spouse"
+        },
+        "preferences": {
+          "dietary": "none",
+          "medical": "none",
+          "specialRequests": "quiet room"
+        },
+        "notificationPreferences": {
+          "email": true,
+          "whatsapp": true,
+          "sms": true,
+          "tripReminders": true,
+          "returnNotifications": true,
+          "passportExpiry": true,
+          "marketingEmails": false
+        },
+        "status": "active",
+        "totalSpent": 6070,
+        "lastTripDate": "2025-01-29T14:58:36.720Z",
+        "createdBy": "68c2e6b1b3d2050600570841",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.065Z",
+        "updatedAt": "2025-09-11T15:11:54.065Z"
+      }
+    ],
+    "activitylogs": [
+      {
+        "_id": "68c2f829c22e19b36b5a2825",
+        "user": {
+          "id": "68c2e8ff2139aeabdd458e58",
+          "username": "Nelson",
+          "email": "nelson@gmail.com"
+        },
+        "action": {
+          "type": "user_login",
+          "description": "User logged in",
+          "entity": "user",
+          "entityId": "68c2e8ff2139aeabdd458e58"
+        },
+        "metadata": {
+          "ipAddress": "::ffff:127.0.0.1",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+          "additionalData": {
+            "requestBody": {
+              "email": "nelson@gmail.com",
+              "password": "nelson@gmail.com"
+            },
+            "responseStatus": 200,
+            "responseTime": 0,
+            "sessionId": null,
+            "contentType": "application/json",
+            "acceptLanguage": "en-US,en;q=0.9",
+            "timestamp": "2025-09-11T16:26:17.902Z"
+          }
+        },
+        "timestamp": "2025-09-11T16:26:17.905Z",
+        "createdAt": "2025-09-11T16:26:17.908Z",
+        "updatedAt": "2025-09-11T16:26:17.908Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2f850c22e19b36b5a2829",
+        "user": {
+          "id": "68c2e9212139aeabdd458e5b",
+          "username": "Nelly",
+          "email": "nelly@gmail.com"
+        },
+        "action": {
+          "type": "user_login",
+          "description": "User logged in",
+          "entity": "user",
+          "entityId": "68c2e9212139aeabdd458e5b"
+        },
+        "metadata": {
+          "ipAddress": "::ffff:127.0.0.1",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+          "additionalData": {
+            "requestBody": {
+              "email": "nelly@gmail.com",
+              "password": "nelly@gmail.com"
+            },
+            "responseStatus": 200,
+            "responseTime": 0,
+            "sessionId": null,
+            "contentType": "application/json",
+            "acceptLanguage": "en-US,en;q=0.9",
+            "timestamp": "2025-09-11T16:26:56.970Z"
+          }
+        },
+        "timestamp": "2025-09-11T16:26:56.971Z",
+        "createdAt": "2025-09-11T16:26:56.972Z",
+        "updatedAt": "2025-09-11T16:26:56.972Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2f9e20d073746bee22edc",
+        "user": {
+          "id": "68c2e9212139aeabdd458e5b",
+          "username": "Nelly",
+          "email": "nelly@gmail.com"
+        },
+        "action": {
+          "type": "system_cache_clear",
+          "description": "System cache cleared",
+          "entity": "system",
+          "entityId": null
+        },
+        "metadata": {
+          "ipAddress": "::ffff:127.0.0.1",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+          "additionalData": {
+            "responseStatus": 200,
+            "responseTime": 2,
+            "contentType": "application/json",
+            "acceptLanguage": "en-US,en;q=0.9",
+            "timestamp": "2025-09-11T16:33:38.092Z"
+          }
+        },
+        "timestamp": "2025-09-11T16:33:38.095Z",
+        "createdAt": "2025-09-11T16:33:38.101Z",
+        "updatedAt": "2025-09-11T16:33:38.101Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2fa180d073746bee22edf",
+        "user": {
+          "id": "68c2e9212139aeabdd458e5b",
+          "username": "Nelly",
+          "email": "nelly@gmail.com"
+        },
+        "action": {
+          "type": "system_health_check",
+          "description": "System health check performed",
+          "entity": "system",
+          "entityId": null
+        },
+        "metadata": {
+          "ipAddress": "::ffff:127.0.0.1",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+          "additionalData": {
+            "responseStatus": 200,
+            "responseTime": 7290,
+            "acceptLanguage": "en-US,en;q=0.9",
+            "timestamp": "2025-09-11T16:34:32.963Z"
+          }
+        },
+        "timestamp": "2025-09-11T16:34:32.963Z",
+        "createdAt": "2025-09-11T16:34:32.964Z",
+        "updatedAt": "2025-09-11T16:34:32.964Z",
+        "__v": 0
+      }
+    ],
+    "passengers": [
+      {
+        "_id": "68c2e6bab3d205060057089b",
+        "clientId": "68c2e6bab3d2050600570898",
+        "name": "John",
+        "surname": "Smith",
+        "dob": "1970-01-23T23:06:38.024Z",
+        "passportNumber": "A1234567",
+        "passportImage": null,
+        "nationality": "Canadian",
+        "expirationDate": "2027-05-09T19:07:43.183Z",
+        "gender": "female",
+        "seatPreference": "aisle",
+        "mealPreference": "vegetarian",
+        "specialRequests": "quiet area",
+        "medicalInfo": "none",
+        "frequentFlyerNumber": null,
+        "visaInfo": {
+          "required": true,
+          "status": "approved",
+          "expiryDate": null,
+          "visaNumber": null
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.442Z",
+        "updatedAt": "2025-09-11T15:11:54.442Z"
+      },
+      {
+        "_id": "68c2e6bab3d205060057089c",
+        "clientId": "68c2e6bab3d2050600570891",
+        "name": "Jane",
+        "surname": "Johnson",
+        "dob": "1982-04-03T05:03:00.964Z",
+        "passportNumber": "B2345678",
+        "passportImage": null,
+        "nationality": "French",
+        "expirationDate": "2027-01-27T23:23:45.464Z",
+        "gender": "male",
+        "seatPreference": "window",
+        "mealPreference": "gluten_free",
+        "specialRequests": "extra legroom",
+        "medicalInfo": "allergies",
+        "frequentFlyerNumber": "FF378443",
+        "visaInfo": {
+          "required": false,
+          "status": "required",
+          "expiryDate": "2027-08-06T15:32:08.141Z",
+          "visaNumber": null
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d205060057083a",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.442Z",
+        "updatedAt": "2025-09-11T15:11:54.442Z"
+      },
+      {
+        "_id": "68c2e6bab3d205060057089d",
+        "clientId": "68c2e6bab3d2050600570899",
+        "name": "Michael",
+        "surname": "Williams",
+        "dob": "1992-03-31T00:49:12.333Z",
+        "passportNumber": "C3456789",
+        "passportImage": null,
+        "nationality": "Spanish",
+        "expirationDate": "2029-12-01T16:13:35.174Z",
+        "gender": "other",
+        "seatPreference": "no_preference",
+        "mealPreference": "kosher",
+        "specialRequests": "none",
+        "medicalInfo": "allergies",
+        "frequentFlyerNumber": "FF696085",
+        "visaInfo": {
+          "required": true,
+          "status": "applied",
+          "expiryDate": null,
+          "visaNumber": null
+        },
+        "status": "inactive",
+        "createdBy": "68c2e6b1b3d2050600570839",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.442Z",
+        "updatedAt": "2025-09-11T15:11:54.442Z"
+      },
+      {
+        "_id": "68c2e6bab3d205060057089e",
+        "clientId": "68c2e6bab3d2050600570898",
+        "name": "Sarah",
+        "surname": "Brown",
+        "dob": "1998-04-27T17:06:22.877Z",
+        "passportNumber": "D4567890",
+        "passportImage": null,
+        "nationality": "Japanese",
+        "expirationDate": "2024-09-14T02:26:40.570Z",
+        "gender": "other",
+        "seatPreference": "no_preference",
+        "mealPreference": "vegan",
+        "specialRequests": "extra legroom",
+        "medicalInfo": "mobility assistance",
+        "frequentFlyerNumber": null,
+        "visaInfo": {
+          "required": false,
+          "status": "required",
+          "expiryDate": null,
+          "visaNumber": null
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.442Z",
+        "updatedAt": "2025-09-11T15:11:54.442Z"
+      },
+      {
+        "_id": "68c2e6bab3d205060057089f",
+        "clientId": "68c2e6bab3d2050600570890",
+        "name": "David",
+        "surname": "Jones",
+        "dob": "1983-01-29T05:45:23.737Z",
+        "passportNumber": "E5678901",
+        "passportImage": null,
+        "nationality": "Japanese",
+        "expirationDate": "2030-07-17T04:05:46.114Z",
+        "gender": "other",
+        "seatPreference": "aisle",
+        "mealPreference": "vegetarian",
+        "specialRequests": "extra legroom",
+        "medicalInfo": "none",
+        "frequentFlyerNumber": null,
+        "visaInfo": {
+          "required": true,
+          "status": "applied",
+          "expiryDate": "2026-12-16T16:55:44.184Z",
+          "visaNumber": null
+        },
+        "status": "inactive",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.442Z",
+        "updatedAt": "2025-09-11T15:11:54.442Z"
+      },
+      {
+        "_id": "68c2e6bab3d20506005708a0",
+        "clientId": "68c2e6bab3d2050600570898",
+        "name": "Emily",
+        "surname": "Garcia",
+        "dob": "2005-08-30T13:00:40.172Z",
+        "passportNumber": "F6789012",
+        "passportImage": null,
+        "nationality": "French",
+        "expirationDate": "2030-08-24T18:47:43.981Z",
+        "gender": "male",
+        "seatPreference": "window",
+        "mealPreference": "gluten_free",
+        "specialRequests": "quiet area",
+        "medicalInfo": "none",
+        "frequentFlyerNumber": null,
+        "visaInfo": {
+          "required": false,
+          "status": "not_required",
+          "expiryDate": null,
+          "visaNumber": "V886113"
+        },
+        "status": "inactive",
+        "createdBy": "68c2e6b1b3d205060057083f",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.442Z",
+        "updatedAt": "2025-09-11T15:11:54.442Z"
+      },
+      {
+        "_id": "68c2e6bab3d20506005708a1",
+        "clientId": "68c2e6bab3d2050600570895",
+        "name": "Robert",
+        "surname": "Miller",
+        "dob": "1992-02-23T07:18:25.887Z",
+        "passportNumber": "G7890123",
+        "passportImage": null,
+        "nationality": "German",
+        "expirationDate": "2030-12-24T15:15:44.714Z",
+        "gender": "female",
+        "seatPreference": "window",
+        "mealPreference": "kosher",
+        "specialRequests": "none",
+        "medicalInfo": "mobility assistance",
+        "frequentFlyerNumber": null,
+        "visaInfo": {
+          "required": true,
+          "status": "approved",
+          "expiryDate": null,
+          "visaNumber": null
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.443Z",
+        "updatedAt": "2025-09-11T15:11:54.443Z"
+      },
+      {
+        "_id": "68c2e6bab3d20506005708a2",
+        "clientId": "68c2e6bab3d2050600570899",
+        "name": "Lisa",
+        "surname": "Davis",
+        "dob": "1961-05-27T10:45:40.787Z",
+        "passportNumber": "H8901234",
+        "passportImage": null,
+        "nationality": "American",
+        "expirationDate": "2027-10-21T08:05:44.891Z",
+        "gender": "female",
+        "seatPreference": "middle",
+        "mealPreference": "kosher",
+        "specialRequests": "none",
+        "medicalInfo": "mobility assistance",
+        "frequentFlyerNumber": null,
+        "visaInfo": {
+          "required": false,
+          "status": "approved",
+          "expiryDate": "2027-10-06T20:32:44.121Z",
+          "visaNumber": "V188679"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d205060057083a",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.443Z",
+        "updatedAt": "2025-09-11T15:11:54.443Z"
+      },
+      {
+        "_id": "68c2e6bab3d20506005708a3",
+        "clientId": "68c2e6bab3d2050600570896",
+        "name": "James",
+        "surname": "Rodriguez",
+        "dob": "1962-04-12T01:49:13.281Z",
+        "passportNumber": "I9012345",
+        "passportImage": null,
+        "nationality": "British",
+        "expirationDate": "2028-10-12T13:53:55.727Z",
+        "gender": "other",
+        "seatPreference": "middle",
+        "mealPreference": "regular",
+        "specialRequests": "quiet area",
+        "medicalInfo": "diabetes",
+        "frequentFlyerNumber": null,
+        "visaInfo": {
+          "required": false,
+          "status": "approved",
+          "expiryDate": null,
+          "visaNumber": "V160955"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.443Z",
+        "updatedAt": "2025-09-11T15:11:54.443Z"
+      },
+      {
+        "_id": "68c2e6bab3d20506005708a4",
+        "clientId": "68c2e6bab3d2050600570892",
+        "name": "Maria",
+        "surname": "Martinez",
+        "dob": "1971-05-08T04:39:09.718Z",
+        "passportNumber": "J0123456",
+        "passportImage": null,
+        "nationality": "British",
+        "expirationDate": "2025-07-07T10:24:44.477Z",
+        "gender": "male",
+        "seatPreference": "middle",
+        "mealPreference": "vegan",
+        "specialRequests": "quiet area",
+        "medicalInfo": "none",
+        "frequentFlyerNumber": null,
+        "visaInfo": {
+          "required": true,
+          "status": "rejected",
+          "expiryDate": null,
+          "visaNumber": "V142497"
+        },
+        "status": "inactive",
+        "createdBy": "68c2e6b1b3d2050600570840",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:54.443Z",
+        "updatedAt": "2025-09-11T15:11:54.443Z"
+      }
+    ],
+    "services": [
+      {
+        "_id": "68c2e6b8b3d205060057087b",
+        "title": "Luxury excursion Package",
+        "type": "hotel",
+        "description": "Experience the best hotel service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d205060057085f",
+        "cost": 1112,
+        "currency": "CAD",
+        "markup": 30.12,
+        "duration": 12,
+        "durationUnit": "days",
+        "capacity": {
+          "min": 1,
+          "max": 13
+        },
+        "location": {
+          "city": "New York",
+          "country": "France",
+          "coordinates": {
+            "latitude": -80.53,
+            "longitude": -148.14
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.983Z",
+          "endDate": "2025-04-09T10:49:00.103Z",
+          "daysOfWeek": [
+            0,
+            4,
+            5,
+            6
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d205060057087c"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 9,
+          "maxAge": 89,
+          "documents": [
+            "id"
+          ],
+          "restrictions": [
+            "no smoking",
+            "dress code"
+          ]
+        },
+        "inclusions": [
+          "parking",
+          "gym"
+        ],
+        "exclusions": [
+          "alcohol"
+        ],
+        "cancellationPolicy": {
+          "freeCancellation": true,
+          "freeCancellationHours": 57,
+          "cancellationFee": 13,
+          "refundPercentage": 21
+        },
+        "status": "inactive",
+        "totalBookings": 15,
+        "totalRevenue": 17150,
+        "rating": {
+          "average": 4.32,
+          "count": 71
+        },
+        "createdBy": "68c2e6b1b3d205060057083f",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:52.999Z",
+        "updatedAt": "2025-09-11T15:11:52.999Z"
+      },
+      {
+        "_id": "68c2e6b8b3d205060057087d",
+        "title": "Economy airline Package",
+        "type": "excursion",
+        "description": "Experience the best excursion service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d2050600570877",
+        "cost": 237,
+        "currency": "AUD",
+        "markup": 49.29,
+        "duration": 8,
+        "durationUnit": "days",
+        "capacity": {
+          "min": 1,
+          "max": 8
+        },
+        "location": {
+          "city": "Los Angeles",
+          "country": "Japan",
+          "coordinates": {
+            "latitude": -24.55,
+            "longitude": -142.63
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.985Z",
+          "endDate": "2025-12-26T07:39:47.065Z",
+          "daysOfWeek": [
+            3,
+            4,
+            6,
+            1,
+            2
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d205060057087e"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 8,
+          "maxAge": 85,
+          "documents": [
+            "insurance",
+            "id"
+          ],
+          "restrictions": []
+        },
+        "inclusions": [
+          "wifi",
+          "spa",
+          "gym"
+        ],
+        "exclusions": [],
+        "cancellationPolicy": {
+          "freeCancellation": true,
+          "freeCancellationHours": 29,
+          "cancellationFee": 31,
+          "refundPercentage": 87
+        },
+        "status": "active",
+        "totalBookings": 37,
+        "totalRevenue": 28471,
+        "rating": {
+          "average": 4.43,
+          "count": 48
+        },
+        "createdBy": "68c2e6b1b3d205060057083e",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:52.999Z",
+        "updatedAt": "2025-09-11T15:11:52.999Z"
+      },
+      {
+        "_id": "68c2e6b8b3d205060057087f",
+        "title": "Luxury restaurant Package",
+        "type": "insurance",
+        "description": "Experience the best insurance service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d2050600570865",
+        "cost": 1786,
+        "currency": "USD",
+        "markup": 46.02,
+        "duration": 10,
+        "durationUnit": "hours",
+        "capacity": {
+          "min": 1,
+          "max": 7
+        },
+        "location": {
+          "city": "Chicago",
+          "country": "Spain",
+          "coordinates": {
+            "latitude": 41.2,
+            "longitude": 130.62
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.986Z",
+          "endDate": "2025-09-26T00:36:23.036Z",
+          "daysOfWeek": [
+            0,
+            6,
+            2,
+            5
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d2050600570880"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 9,
+          "maxAge": 86,
+          "documents": [
+            "visa",
+            "passport",
+            "id"
+          ],
+          "restrictions": [
+            "dress code",
+            "age limit"
+          ]
+        },
+        "inclusions": [
+          "breakfast",
+          "wifi",
+          "parking",
+          "spa",
+          "gym"
+        ],
+        "exclusions": [
+          "alcohol",
+          "laundry"
+        ],
+        "cancellationPolicy": {
+          "freeCancellation": true,
+          "freeCancellationHours": 55,
+          "cancellationFee": 16,
+          "refundPercentage": 9
+        },
+        "status": "inactive",
+        "totalBookings": 105,
+        "totalRevenue": 41702,
+        "rating": {
+          "average": 3.76,
+          "count": 99
+        },
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:52.999Z",
+        "updatedAt": "2025-09-11T15:11:52.999Z"
+      },
+      {
+        "_id": "68c2e6b8b3d2050600570881",
+        "title": "Deluxe restaurant Package",
+        "type": "airline",
+        "description": "Experience the best airline service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d2050600570868",
+        "cost": 1789,
+        "currency": "GBP",
+        "markup": 24.37,
+        "duration": 8,
+        "durationUnit": "hours",
+        "capacity": {
+          "min": 2,
+          "max": 6
+        },
+        "location": {
+          "city": "Houston",
+          "country": "Canada",
+          "coordinates": {
+            "latitude": 14.03,
+            "longitude": -50.69
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.987Z",
+          "endDate": "2025-11-23T10:17:42.744Z",
+          "daysOfWeek": [
+            0,
+            1,
+            6,
+            2,
+            3,
+            4,
+            5
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d2050600570882"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 8,
+          "maxAge": 74,
+          "documents": [
+            "visa",
+            "passport"
+          ],
+          "restrictions": [
+            "dress code"
+          ]
+        },
+        "inclusions": [
+          "parking",
+          "wifi",
+          "spa",
+          "gym"
+        ],
+        "exclusions": [
+          "alcohol",
+          "minibar"
+        ],
+        "cancellationPolicy": {
+          "freeCancellation": false,
+          "freeCancellationHours": 64,
+          "cancellationFee": 80,
+          "refundPercentage": 98
+        },
+        "status": "active",
+        "totalBookings": 65,
+        "totalRevenue": 19782,
+        "rating": {
+          "average": 3.22,
+          "count": 70
+        },
+        "createdBy": "68c2e6b1b3d205060057083c",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:53.000Z",
+        "updatedAt": "2025-09-11T15:11:53.000Z"
+      },
+      {
+        "_id": "68c2e6b8b3d2050600570883",
+        "title": "Deluxe hotel Package",
+        "type": "insurance",
+        "description": "Experience the best insurance service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d2050600570871",
+        "cost": 814,
+        "currency": "GBP",
+        "markup": 43.9,
+        "duration": 8,
+        "durationUnit": "days",
+        "capacity": {
+          "min": 2,
+          "max": 20
+        },
+        "location": {
+          "city": "Phoenix",
+          "country": "Germany",
+          "coordinates": {
+            "latitude": 44.41,
+            "longitude": 107.09
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.988Z",
+          "endDate": "2025-05-29T05:32:36.551Z",
+          "daysOfWeek": [
+            6,
+            0,
+            1
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d2050600570884"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 8,
+          "maxAge": 72,
+          "documents": [
+            "insurance",
+            "passport",
+            "visa"
+          ],
+          "restrictions": [
+            "dress code"
+          ]
+        },
+        "inclusions": [
+          "parking",
+          "wifi",
+          "breakfast",
+          "spa",
+          "pool"
+        ],
+        "exclusions": [
+          "alcohol",
+          "minibar"
+        ],
+        "cancellationPolicy": {
+          "freeCancellation": false,
+          "freeCancellationHours": 52,
+          "cancellationFee": 80,
+          "refundPercentage": 27
+        },
+        "status": "active",
+        "totalBookings": 124,
+        "totalRevenue": 32283,
+        "rating": {
+          "average": 3.89,
+          "count": 100
+        },
+        "createdBy": "68c2e6b1b3d205060057083e",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:53.000Z",
+        "updatedAt": "2025-09-11T15:11:53.000Z"
+      },
+      {
+        "_id": "68c2e6b8b3d2050600570885",
+        "title": "Deluxe restaurant Package",
+        "type": "hotel",
+        "description": "Experience the best hotel service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d205060057085f",
+        "cost": 1066,
+        "currency": "EUR",
+        "markup": 32.87,
+        "duration": 6,
+        "durationUnit": "hours",
+        "capacity": {
+          "min": 2,
+          "max": 7
+        },
+        "location": {
+          "city": "Philadelphia",
+          "country": "Germany",
+          "coordinates": {
+            "latitude": 46.85,
+            "longitude": 80.42
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.989Z",
+          "endDate": "2025-08-13T01:12:45.365Z",
+          "daysOfWeek": [
+            0,
+            2,
+            6,
+            4,
+            3,
+            1
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d2050600570886"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 2,
+          "maxAge": 80,
+          "documents": [
+            "id",
+            "visa"
+          ],
+          "restrictions": []
+        },
+        "inclusions": [
+          "parking",
+          "spa",
+          "breakfast",
+          "pool",
+          "wifi"
+        ],
+        "exclusions": [],
+        "cancellationPolicy": {
+          "freeCancellation": true,
+          "freeCancellationHours": 65,
+          "cancellationFee": 85,
+          "refundPercentage": 95
+        },
+        "status": "active",
+        "totalBookings": 63,
+        "totalRevenue": 16784,
+        "rating": {
+          "average": 3.28,
+          "count": 11
+        },
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:53.000Z",
+        "updatedAt": "2025-09-11T15:11:53.000Z"
+      },
+      {
+        "_id": "68c2e6b8b3d2050600570887",
+        "title": "Economy restaurant Package",
+        "type": "excursion",
+        "description": "Experience the best excursion service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d2050600570877",
+        "cost": 764,
+        "currency": "USD",
+        "markup": 28.95,
+        "duration": 4,
+        "durationUnit": "hours",
+        "capacity": {
+          "min": 1,
+          "max": 20
+        },
+        "location": {
+          "city": "San Antonio",
+          "country": "United Kingdom",
+          "coordinates": {
+            "latitude": -22.56,
+            "longitude": -45.35
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.989Z",
+          "endDate": "2025-03-11T14:58:44.882Z",
+          "daysOfWeek": [
+            6,
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d2050600570888"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 9,
+          "maxAge": 85,
+          "documents": [
+            "id",
+            "visa"
+          ],
+          "restrictions": [
+            "dress code"
+          ]
+        },
+        "inclusions": [
+          "breakfast",
+          "wifi",
+          "gym"
+        ],
+        "exclusions": [],
+        "cancellationPolicy": {
+          "freeCancellation": false,
+          "freeCancellationHours": 28,
+          "cancellationFee": 74,
+          "refundPercentage": 51
+        },
+        "status": "active",
+        "totalBookings": 160,
+        "totalRevenue": 38414,
+        "rating": {
+          "average": 4.28,
+          "count": 73
+        },
+        "createdBy": "68c2e6b1b3d2050600570840",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:53.000Z",
+        "updatedAt": "2025-09-11T15:11:53.000Z"
+      },
+      {
+        "_id": "68c2e6b8b3d2050600570889",
+        "title": "Premium excursion Package",
+        "type": "insurance",
+        "description": "Experience the best insurance service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d2050600570862",
+        "cost": 996,
+        "currency": "CAD",
+        "markup": 25.22,
+        "duration": 12,
+        "durationUnit": "days",
+        "capacity": {
+          "min": 1,
+          "max": 15
+        },
+        "location": {
+          "city": "San Diego",
+          "country": "United States",
+          "coordinates": {
+            "latitude": -71.65,
+            "longitude": 91.73
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.990Z",
+          "endDate": "2025-06-05T16:13:20.735Z",
+          "daysOfWeek": [
+            2,
+            6,
+            1,
+            5,
+            3
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d205060057088a"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 5,
+          "maxAge": 93,
+          "documents": [
+            "id"
+          ],
+          "restrictions": []
+        },
+        "inclusions": [
+          "breakfast",
+          "gym"
+        ],
+        "exclusions": [],
+        "cancellationPolicy": {
+          "freeCancellation": true,
+          "freeCancellationHours": 43,
+          "cancellationFee": 2,
+          "refundPercentage": 53
+        },
+        "status": "active",
+        "totalBookings": 164,
+        "totalRevenue": 43213,
+        "rating": {
+          "average": 3.57,
+          "count": 9
+        },
+        "createdBy": "68c2e6b1b3d2050600570839",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:53.000Z",
+        "updatedAt": "2025-09-11T15:11:53.000Z"
+      },
+      {
+        "_id": "68c2e6b8b3d205060057088b",
+        "title": "Deluxe hotel Package",
+        "type": "excursion",
+        "description": "Experience the best excursion service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d2050600570877",
+        "cost": 472,
+        "currency": "AUD",
+        "markup": 21.16,
+        "duration": 3,
+        "durationUnit": "hours",
+        "capacity": {
+          "min": 1,
+          "max": 14
+        },
+        "location": {
+          "city": "Dallas",
+          "country": "United States",
+          "coordinates": {
+            "latitude": 42.15,
+            "longitude": -175.87
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.991Z",
+          "endDate": "2025-04-07T10:05:44.610Z",
+          "daysOfWeek": [
+            1,
+            4,
+            6
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d205060057088c"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 10,
+          "maxAge": 71,
+          "documents": [
+            "passport",
+            "visa",
+            "id"
+          ],
+          "restrictions": [
+            "no smoking",
+            "dress code"
+          ]
+        },
+        "inclusions": [
+          "breakfast",
+          "pool",
+          "parking"
+        ],
+        "exclusions": [],
+        "cancellationPolicy": {
+          "freeCancellation": true,
+          "freeCancellationHours": 46,
+          "cancellationFee": 95,
+          "refundPercentage": 77
+        },
+        "status": "active",
+        "totalBookings": 156,
+        "totalRevenue": 48935,
+        "rating": {
+          "average": 4.19,
+          "count": 30
+        },
+        "createdBy": "68c2e6b1b3d205060057083d",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:53.000Z",
+        "updatedAt": "2025-09-11T15:11:53.000Z"
+      },
+      {
+        "_id": "68c2e6b8b3d205060057088d",
+        "title": "Premium hotel Package",
+        "type": "excursion",
+        "description": "Experience the best excursion service with our comprehensive package. Includes all amenities and premium features.",
+        "providerId": "68c2e6b7b3d2050600570877",
+        "cost": 1158,
+        "currency": "CAD",
+        "markup": 29.28,
+        "duration": 2,
+        "durationUnit": "hours",
+        "capacity": {
+          "min": 1,
+          "max": 8
+        },
+        "location": {
+          "city": "San Jose",
+          "country": "Germany",
+          "coordinates": {
+            "latitude": -19.03,
+            "longitude": -66.35
+          }
+        },
+        "availability": {
+          "startDate": "2025-09-11T15:11:52.992Z",
+          "endDate": "2025-08-16T01:58:08.321Z",
+          "daysOfWeek": [
+            0,
+            6,
+            3,
+            4,
+            1
+          ],
+          "timeSlots": [
+            {
+              "start": "09:00",
+              "end": "17:00",
+              "_id": "68c2e6b8b3d205060057088e"
+            }
+          ]
+        },
+        "requirements": {
+          "minAge": 11,
+          "maxAge": 86,
+          "documents": [
+            "insurance",
+            "passport"
+          ],
+          "restrictions": [
+            "age limit"
+          ]
+        },
+        "inclusions": [
+          "breakfast",
+          "gym"
+        ],
+        "exclusions": [
+          "alcohol"
+        ],
+        "cancellationPolicy": {
+          "freeCancellation": true,
+          "freeCancellationHours": 70,
+          "cancellationFee": 94,
+          "refundPercentage": 72
+        },
+        "status": "active",
+        "totalBookings": 160,
+        "totalRevenue": 27497,
+        "rating": {
+          "average": 4.34,
+          "count": 87
+        },
+        "createdBy": "68c2e6b1b3d2050600570841",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:53.000Z",
+        "updatedAt": "2025-09-11T15:11:53.000Z"
+      }
+    ],
+    "cupos": [
+      {
+        "_id": "68c2e6bab3d20506005708a6",
+        "serviceId": "68c2e6b8b3d205060057088b",
+        "totalSeats": 92,
+        "reservedSeats": 38,
+        "availableSeats": 54,
+        "metadata": {
+          "date": "2025-10-31T09:56:12.201Z",
+          "roomType": null,
+          "flightClass": null,
+          "providerRef": "REF222550",
+          "notes": "Late checkout available"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d2050600570839",
+        "createdAt": "2025-09-11T15:11:54.805Z",
+        "updatedAt": "2025-09-11T15:11:54.805Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bab3d20506005708a7",
+        "serviceId": "68c2e6b8b3d2050600570883",
+        "totalSeats": 83,
+        "reservedSeats": 12,
+        "availableSeats": 71,
+        "metadata": {
+          "date": "2025-11-15T20:00:42.661Z",
+          "roomType": null,
+          "flightClass": null,
+          "providerRef": "REF611321",
+          "notes": "Special rates"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d2050600570839",
+        "createdAt": "2025-09-11T15:11:54.806Z",
+        "updatedAt": "2025-09-11T15:11:54.806Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bab3d20506005708a8",
+        "serviceId": "68c2e6b8b3d205060057087f",
+        "totalSeats": 88,
+        "reservedSeats": 6,
+        "availableSeats": 82,
+        "metadata": {
+          "date": "2025-10-23T21:27:45.714Z",
+          "roomType": null,
+          "flightClass": null,
+          "providerRef": "REF128104",
+          "notes": "Late checkout available"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "createdAt": "2025-09-11T15:11:54.806Z",
+        "updatedAt": "2025-09-11T15:11:54.806Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bab3d20506005708a9",
+        "serviceId": "68c2e6b8b3d2050600570885",
+        "totalSeats": 58,
+        "reservedSeats": 41,
+        "availableSeats": 17,
+        "metadata": {
+          "date": "2025-10-18T22:21:34.413Z",
+          "roomType": "presidential",
+          "flightClass": null,
+          "providerRef": "REF268540",
+          "notes": "Late checkout available"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "createdAt": "2025-09-11T15:11:54.807Z",
+        "updatedAt": "2025-09-11T15:11:54.807Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bab3d20506005708aa",
+        "serviceId": "68c2e6b8b3d2050600570887",
+        "totalSeats": 82,
+        "reservedSeats": 48,
+        "availableSeats": 34,
+        "metadata": {
+          "date": "2025-11-20T03:34:37.508Z",
+          "roomType": null,
+          "flightClass": null,
+          "providerRef": "REF882835",
+          "notes": "Early check-in available"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d205060057083a",
+        "createdAt": "2025-09-11T15:11:54.807Z",
+        "updatedAt": "2025-09-11T15:11:54.807Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bab3d20506005708ab",
+        "serviceId": "68c2e6b8b3d2050600570889",
+        "totalSeats": 32,
+        "reservedSeats": 20,
+        "availableSeats": 12,
+        "metadata": {
+          "date": "2025-10-19T04:38:44.574Z",
+          "roomType": null,
+          "flightClass": null,
+          "providerRef": "REF966148",
+          "notes": "Early check-in available"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d205060057083c",
+        "createdAt": "2025-09-11T15:11:54.808Z",
+        "updatedAt": "2025-09-11T15:11:54.808Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bab3d20506005708ac",
+        "serviceId": "68c2e6b8b3d2050600570881",
+        "totalSeats": 78,
+        "reservedSeats": 46,
+        "availableSeats": 32,
+        "metadata": {
+          "date": "2025-10-23T08:08:48.185Z",
+          "roomType": null,
+          "flightClass": "economy",
+          "providerRef": "REF953289",
+          "notes": "Special rates"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d205060057083c",
+        "createdAt": "2025-09-11T15:11:54.808Z",
+        "updatedAt": "2025-09-11T15:11:54.808Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bab3d20506005708ad",
+        "serviceId": "68c2e6b8b3d2050600570881",
+        "totalSeats": 98,
+        "reservedSeats": 64,
+        "availableSeats": 34,
+        "metadata": {
+          "date": "2025-09-13T14:54:06.796Z",
+          "roomType": null,
+          "flightClass": "first",
+          "providerRef": "REF567168",
+          "notes": "Late checkout available"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d2050600570841",
+        "createdAt": "2025-09-11T15:11:54.809Z",
+        "updatedAt": "2025-09-11T15:11:54.809Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bab3d20506005708ae",
+        "serviceId": "68c2e6b8b3d205060057087d",
+        "totalSeats": 11,
+        "reservedSeats": 1,
+        "availableSeats": 10,
+        "metadata": {
+          "date": "2025-10-04T05:18:53.828Z",
+          "roomType": null,
+          "flightClass": null,
+          "providerRef": "REF285719",
+          "notes": "Early check-in available"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d2050600570841",
+        "createdAt": "2025-09-11T15:11:54.809Z",
+        "updatedAt": "2025-09-11T15:11:54.809Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bab3d20506005708af",
+        "serviceId": "68c2e6b8b3d205060057087b",
+        "totalSeats": 38,
+        "reservedSeats": 21,
+        "availableSeats": 17,
+        "metadata": {
+          "date": "2025-12-30T06:40:51.592Z",
+          "roomType": "deluxe",
+          "flightClass": null,
+          "providerRef": "REF168000",
+          "notes": "Early check-in available"
+        },
+        "status": "active",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "createdAt": "2025-09-11T15:11:54.810Z",
+        "updatedAt": "2025-09-11T15:11:54.810Z",
+        "__v": 0
+      }
+    ],
+    "users": [
+      {
+        "_id": "68c2e6541e80bb3896b6c25d",
+        "username": "Tomson",
+        "email": "tom@gamil.com",
+        "avatar": null,
+        "role": "admin",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          },
+          "theme": "system",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "USD"
+        },
+        "createdAt": "2025-09-11T15:10:12.050Z",
+        "updatedAt": "2025-09-11T15:10:12.050Z",
+        "passwordHash": "$2b$12$ZMdD7hjGXY/aZctnVt3VyOxwhySpS79Jz.LiIldQLQHUekLKksy4e",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d2050600570839",
+        "username": "user1",
+        "email": "john.smith@email.com",
+        "firstName": "John",
+        "lastName": "Smith",
+        "phone": "+1-555-0101",
+        "avatar": null,
+        "role": "admin",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "system",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "USD",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          }
+        },
+        "createdAt": "2025-09-11T15:11:45.485Z",
+        "updatedAt": "2025-09-11T15:11:45.485Z",
+        "passwordHash": "$2b$12$kscFNxrhVelr1SbtUrKtje9y19CxFu1NPqQLyDWrJCU288B.A5dIi",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d205060057083a",
+        "username": "user2",
+        "email": "jane.johnson@email.com",
+        "firstName": "Jane",
+        "lastName": "Johnson",
+        "phone": "+1-555-0102",
+        "avatar": null,
+        "role": "admin",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "system",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "AUD",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          }
+        },
+        "createdAt": "2025-09-11T15:11:46.117Z",
+        "updatedAt": "2025-09-11T15:11:46.117Z",
+        "passwordHash": "$2b$12$MgJ0eman9N35MgKmYuW/4u/2WdnoGuN0iKsC89qENvK6HZmZXLliS",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d205060057083b",
+        "username": "user3",
+        "email": "michael.williams@email.com",
+        "firstName": "Michael",
+        "lastName": "Williams",
+        "phone": "+1-555-0103",
+        "avatar": null,
+        "role": "seller",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "system",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "EUR",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          }
+        },
+        "createdAt": "2025-09-11T15:11:46.697Z",
+        "updatedAt": "2025-09-11T15:11:46.697Z",
+        "passwordHash": "$2b$12$HrmxxVqf/O5QcjN/4xkpve./J5HPwiu4P0ydmGEOn7pSseGIY5Gti",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d205060057083c",
+        "username": "Hiilly",
+        "email": "sarah.brown@email.com",
+        "firstName": "Sarah",
+        "lastName": "Brown",
+        "phone": "+1-555-0104",
+        "avatar": null,
+        "role": "seller",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "system",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "AUD",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          }
+        },
+        "createdAt": "2025-09-11T15:11:47.281Z",
+        "updatedAt": "2025-09-11T15:22:46.242Z",
+        "passwordHash": "$2b$12$pYz9AhADAXJ6DeqGYXuzWO1o0ERf53cS6.mNFCxZ3Kc9pLBvcE1yG",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d205060057083d",
+        "username": "user5",
+        "email": "david.jones@email.com",
+        "firstName": "David",
+        "lastName": "Jones",
+        "phone": "+1-555-0105",
+        "avatar": null,
+        "role": "seller",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "light",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "AUD",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": true
+          }
+        },
+        "createdAt": "2025-09-11T15:11:47.886Z",
+        "updatedAt": "2025-09-11T15:11:47.886Z",
+        "passwordHash": "$2b$12$ZHe7DRYe73xkP1i0khJ9Q.TsEW87W023jgfiFTEA1HGtAC8fjctCy",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d205060057083e",
+        "username": "user6",
+        "email": "emily.garcia@email.com",
+        "firstName": "Emily",
+        "lastName": "Garcia",
+        "phone": "+1-555-0106",
+        "avatar": null,
+        "role": "seller",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "system",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "AUD",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": true
+          }
+        },
+        "createdAt": "2025-09-11T15:11:48.471Z",
+        "updatedAt": "2025-09-11T15:11:48.471Z",
+        "passwordHash": "$2b$12$0Eeej3fe6EFl7wDfW3Goku2bJP82iDzDfzFtaZdzdb/hMhQPWGBti",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d205060057083f",
+        "username": "user7",
+        "email": "robert.miller@email.com",
+        "firstName": "Robert",
+        "lastName": "Miller",
+        "phone": "+1-555-0107",
+        "avatar": null,
+        "role": "seller",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "light",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "EUR",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          }
+        },
+        "createdAt": "2025-09-11T15:11:49.053Z",
+        "updatedAt": "2025-09-11T15:11:49.053Z",
+        "passwordHash": "$2b$12$g/1lkf.hqzqIhbuJmainFOvPwU0jwRlvUFGWHjsZFM.kBQrYHH4hW",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d2050600570840",
+        "username": "user8",
+        "email": "lisa.davis@email.com",
+        "firstName": "Lisa",
+        "lastName": "Davis",
+        "phone": "+1-555-0108",
+        "avatar": null,
+        "role": "seller",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "light",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "EUR",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          }
+        },
+        "createdAt": "2025-09-11T15:11:49.634Z",
+        "updatedAt": "2025-09-11T15:11:49.634Z",
+        "passwordHash": "$2b$12$sqa3G73AnuKwwd7iUUEpjOLv3KZE2saYQfJNKMSx5bwvzXribdCTG",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d2050600570841",
+        "username": "user9",
+        "email": "james.rodriguez@email.com",
+        "firstName": "James",
+        "lastName": "Rodriguez",
+        "phone": "+1-555-0109",
+        "avatar": null,
+        "role": "seller",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "light",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "AUD",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": true
+          }
+        },
+        "createdAt": "2025-09-11T15:11:50.215Z",
+        "updatedAt": "2025-09-11T15:11:50.215Z",
+        "passwordHash": "$2b$12$VVbeW98rf4W4pPoxJAIEf.JpGDbZJVFsHQ3M15wqjnKzRBsXq5iYm",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6b1b3d2050600570842",
+        "username": "user10",
+        "email": "maria.martinez@email.com",
+        "firstName": "Maria",
+        "lastName": "Martinez",
+        "phone": "+1-555-0110",
+        "avatar": null,
+        "role": "seller",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "theme": "dark",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "GBP",
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          }
+        },
+        "createdAt": "2025-09-11T15:11:50.794Z",
+        "updatedAt": "2025-09-11T15:11:50.794Z",
+        "passwordHash": "$2b$12$ygUOvXlyL0hNfnRtRjBUT.hjpUyYdw.NrURWkIE6z.FqWroCgu3Vu",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e8ff2139aeabdd458e58",
+        "username": "Nelson",
+        "email": "nelson@gmail.com",
+        "avatar": null,
+        "role": "seller",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          },
+          "theme": "system",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "USD"
+        },
+        "createdAt": "2025-09-11T15:21:35.414Z",
+        "updatedAt": "2025-09-11T15:21:35.414Z",
+        "passwordHash": "$2b$12$bdN7dbgZ6N7HfzJKCubADeFBpC2xBHntUK7TgADyMTPhcpnIESejq",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e9212139aeabdd458e5b",
+        "username": "Nelly",
+        "email": "nelly@gmail.com",
+        "avatar": null,
+        "role": "admin",
+        "isActive": true,
+        "lastLogin": null,
+        "loginAttempts": 0,
+        "lockUntil": null,
+        "preferences": {
+          "notifications": {
+            "email": true,
+            "push": true,
+            "sms": false
+          },
+          "theme": "system",
+          "language": "en",
+          "timezone": "UTC",
+          "currency": "USD"
+        },
+        "createdAt": "2025-09-11T15:22:09.875Z",
+        "updatedAt": "2025-09-11T15:22:09.875Z",
+        "passwordHash": "$2b$12$wTANnYdXEwdysXgBr3lV.OAPPJFYbf7hoR4JYfJfBn5J3axduxXyS",
+        "__v": 0
+      }
+    ],
+    "sales": [
+      {
+        "_id": "68c2e6bbb3d20506005708b1",
+        "clientId": "68c2e6bab3d2050600570895",
+        "passengers": [
+          {
+            "passengerId": "68c2e6bab3d20506005708a1",
+            "price": 1819,
+            "notes": "None",
+            "_id": "68c2e6bbb3d20506005708b2"
+          }
+        ],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d205060057087b",
+            "providerId": "68c2e6b7b3d205060057085f",
+            "priceClient": 1446.9344,
+            "costProvider": 1112,
+            "currency": "CAD",
+            "quantity": 1,
+            "_id": "68c2e6bbb3d20506005708b3"
+          }
+        ],
+        "totalSalePrice": 3265.9344,
+        "totalCost": 1112,
+        "profit": 2153.9344,
+        "totalClientPayments": 2204,
+        "totalProviderPayments": 533,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "cancelled",
+        "createdBy": "68c2e6b1b3d205060057083d",
+        "notes": "Corporate rate",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.171Z",
+        "updatedAt": "2025-09-11T15:11:55.171Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bbb3d20506005708b4",
+        "clientId": "68c2e6bab3d2050600570895",
+        "passengers": [
+          {
+            "passengerId": "68c2e6bab3d20506005708a1",
+            "price": 1361,
+            "notes": "None",
+            "_id": "68c2e6bbb3d20506005708b5"
+          }
+        ],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d205060057088b",
+            "providerId": "68c2e6b7b3d2050600570877",
+            "priceClient": 571.8752,
+            "costProvider": 472,
+            "currency": "AUD",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708b6"
+          },
+          {
+            "serviceId": "68c2e6b8b3d205060057087b",
+            "providerId": "68c2e6b7b3d205060057085f",
+            "priceClient": 1446.9344,
+            "costProvider": 1112,
+            "currency": "CAD",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708b7"
+          },
+          {
+            "serviceId": "68c2e6b8b3d205060057087f",
+            "providerId": "68c2e6b7b3d2050600570865",
+            "priceClient": 2607.9172,
+            "costProvider": 1786,
+            "currency": "USD",
+            "quantity": 2,
+            "_id": "68c2e6bbb3d20506005708b8"
+          }
+        ],
+        "totalSalePrice": 12633.2632,
+        "totalCost": 8324,
+        "profit": 4309.263199999999,
+        "totalClientPayments": 6972,
+        "totalProviderPayments": 7,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "open",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "notes": "Corporate rate",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.172Z",
+        "updatedAt": "2025-09-11T15:11:55.172Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bbb3d20506005708b9",
+        "clientId": "68c2e6bab3d2050600570893",
+        "passengers": [],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d2050600570883",
+            "providerId": "68c2e6b7b3d2050600570871",
+            "priceClient": 1171.346,
+            "costProvider": 814,
+            "currency": "GBP",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708ba"
+          },
+          {
+            "serviceId": "68c2e6b8b3d2050600570889",
+            "providerId": "68c2e6b7b3d2050600570862",
+            "priceClient": 1247.1912,
+            "costProvider": 996,
+            "currency": "CAD",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708bb"
+          }
+        ],
+        "totalSalePrice": 7255.6116,
+        "totalCost": 5430,
+        "profit": 1825.6116000000002,
+        "totalClientPayments": 1911,
+        "totalProviderPayments": 475,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "closed",
+        "createdBy": "68c2e6b1b3d205060057083d",
+        "notes": "None",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.172Z",
+        "updatedAt": "2025-09-11T15:11:55.172Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bbb3d20506005708bc",
+        "clientId": "68c2e6bab3d2050600570896",
+        "passengers": [
+          {
+            "passengerId": "68c2e6bab3d20506005708a3",
+            "price": 940,
+            "notes": "Vegetarian meal",
+            "_id": "68c2e6bbb3d20506005708bd"
+          }
+        ],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d205060057087d",
+            "providerId": "68c2e6b7b3d2050600570877",
+            "priceClient": 353.81730000000005,
+            "costProvider": 237,
+            "currency": "AUD",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708be"
+          },
+          {
+            "serviceId": "68c2e6b8b3d2050600570885",
+            "providerId": "68c2e6b7b3d205060057085f",
+            "priceClient": 1416.3942,
+            "costProvider": 1066,
+            "currency": "EUR",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708bf"
+          }
+        ],
+        "totalSalePrice": 6250.6345,
+        "totalCost": 3909,
+        "profit": 2341.6345,
+        "totalClientPayments": 2743,
+        "totalProviderPayments": 1037,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "cancelled",
+        "createdBy": "68c2e6b1b3d205060057083c",
+        "notes": "None",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.173Z",
+        "updatedAt": "2025-09-11T15:11:55.173Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bbb3d20506005708c0",
+        "clientId": "68c2e6bab3d2050600570895",
+        "passengers": [
+          {
+            "passengerId": "68c2e6bab3d20506005708a1",
+            "price": 1126,
+            "notes": "None",
+            "_id": "68c2e6bbb3d20506005708c1"
+          }
+        ],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d2050600570885",
+            "providerId": "68c2e6b7b3d205060057085f",
+            "priceClient": 1416.3942,
+            "costProvider": 1066,
+            "currency": "EUR",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708c2"
+          },
+          {
+            "serviceId": "68c2e6b8b3d205060057087d",
+            "providerId": "68c2e6b7b3d2050600570877",
+            "priceClient": 353.81730000000005,
+            "costProvider": 237,
+            "currency": "AUD",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708c3"
+          },
+          {
+            "serviceId": "68c2e6b8b3d205060057088d",
+            "providerId": "68c2e6b7b3d2050600570877",
+            "priceClient": 1497.0624,
+            "costProvider": 1158,
+            "currency": "CAD",
+            "quantity": 1,
+            "_id": "68c2e6bbb3d20506005708c4"
+          }
+        ],
+        "totalSalePrice": 7933.6969,
+        "totalCost": 5067,
+        "profit": 2866.6969,
+        "totalClientPayments": 1449,
+        "totalProviderPayments": 2230,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "cancelled",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "notes": "Group booking",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.174Z",
+        "updatedAt": "2025-09-11T15:11:55.174Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bbb3d20506005708c5",
+        "clientId": "68c2e6bab3d2050600570897",
+        "passengers": [],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d2050600570881",
+            "providerId": "68c2e6b7b3d2050600570868",
+            "priceClient": 2224.9793,
+            "costProvider": 1789,
+            "currency": "GBP",
+            "quantity": 2,
+            "_id": "68c2e6bbb3d20506005708c6"
+          }
+        ],
+        "totalSalePrice": 4449.9586,
+        "totalCost": 3578,
+        "profit": 871.9585999999999,
+        "totalClientPayments": 3251,
+        "totalProviderPayments": 701,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "closed",
+        "createdBy": "68c2e6b1b3d2050600570841",
+        "notes": "Special dietary requirements",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.174Z",
+        "updatedAt": "2025-09-11T15:11:55.174Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bbb3d20506005708c7",
+        "clientId": "68c2e6bab3d2050600570896",
+        "passengers": [
+          {
+            "passengerId": "68c2e6bab3d20506005708a3",
+            "price": 745,
+            "notes": "Window seat requested",
+            "_id": "68c2e6bbb3d20506005708c8"
+          }
+        ],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d2050600570885",
+            "providerId": "68c2e6b7b3d205060057085f",
+            "priceClient": 1416.3942,
+            "costProvider": 1066,
+            "currency": "EUR",
+            "quantity": 2,
+            "_id": "68c2e6bbb3d20506005708c9"
+          },
+          {
+            "serviceId": "68c2e6b8b3d205060057087b",
+            "providerId": "68c2e6b7b3d205060057085f",
+            "priceClient": 1446.9344,
+            "costProvider": 1112,
+            "currency": "CAD",
+            "quantity": 1,
+            "_id": "68c2e6bbb3d20506005708ca"
+          }
+        ],
+        "totalSalePrice": 5024.7228,
+        "totalCost": 3244,
+        "profit": 1780.7227999999996,
+        "totalClientPayments": 3098,
+        "totalProviderPayments": 1025,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "open",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "notes": "None",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.175Z",
+        "updatedAt": "2025-09-11T15:11:55.175Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bbb3d20506005708cb",
+        "clientId": "68c2e6bab3d2050600570898",
+        "passengers": [
+          {
+            "passengerId": "68c2e6bab3d20506005708a0",
+            "price": 417,
+            "notes": "Wheelchair assistance",
+            "_id": "68c2e6bbb3d20506005708cc"
+          }
+        ],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d205060057087f",
+            "providerId": "68c2e6b7b3d2050600570865",
+            "priceClient": 2607.9172,
+            "costProvider": 1786,
+            "currency": "USD",
+            "quantity": 2,
+            "_id": "68c2e6bbb3d20506005708cd"
+          }
+        ],
+        "totalSalePrice": 5632.8344,
+        "totalCost": 3572,
+        "profit": 2060.8343999999997,
+        "totalClientPayments": 220,
+        "totalProviderPayments": 1363,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "open",
+        "createdBy": "68c2e6b1b3d205060057083c",
+        "notes": "Group booking",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.175Z",
+        "updatedAt": "2025-09-11T15:11:55.175Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bbb3d20506005708ce",
+        "clientId": "68c2e6bab3d2050600570897",
+        "passengers": [],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d2050600570887",
+            "providerId": "68c2e6b7b3d2050600570877",
+            "priceClient": 985.1779999999999,
+            "costProvider": 764,
+            "currency": "USD",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708cf"
+          }
+        ],
+        "totalSalePrice": 2955.5339999999997,
+        "totalCost": 2292,
+        "profit": 663.5339999999997,
+        "totalClientPayments": 1654,
+        "totalProviderPayments": 377,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "closed",
+        "createdBy": "68c2e6b1b3d205060057083c",
+        "notes": "Special dietary requirements",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.176Z",
+        "updatedAt": "2025-09-11T15:11:55.176Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bbb3d20506005708d0",
+        "clientId": "68c2e6bab3d2050600570891",
+        "passengers": [
+          {
+            "passengerId": "68c2e6bab3d205060057089c",
+            "price": 1090,
+            "notes": "Wheelchair assistance",
+            "_id": "68c2e6bbb3d20506005708d1"
+          }
+        ],
+        "services": [
+          {
+            "serviceId": "68c2e6b8b3d205060057088d",
+            "providerId": "68c2e6b7b3d2050600570877",
+            "priceClient": 1497.0624,
+            "costProvider": 1158,
+            "currency": "CAD",
+            "quantity": 3,
+            "_id": "68c2e6bbb3d20506005708d2"
+          },
+          {
+            "serviceId": "68c2e6b8b3d205060057087d",
+            "providerId": "68c2e6b7b3d2050600570877",
+            "priceClient": 353.81730000000005,
+            "costProvider": 237,
+            "currency": "AUD",
+            "quantity": 2,
+            "_id": "68c2e6bbb3d20506005708d3"
+          },
+          {
+            "serviceId": "68c2e6b8b3d2050600570889",
+            "providerId": "68c2e6b7b3d2050600570862",
+            "priceClient": 1247.1912,
+            "costProvider": 996,
+            "currency": "CAD",
+            "quantity": 1,
+            "_id": "68c2e6bbb3d20506005708d4"
+          }
+        ],
+        "totalSalePrice": 7536.013000000001,
+        "totalCost": 4944,
+        "profit": 2592.013000000001,
+        "totalClientPayments": 356,
+        "totalProviderPayments": 293,
+        "clientBalance": 0,
+        "providerBalance": 0,
+        "status": "cancelled",
+        "createdBy": "68c2e6b1b3d2050600570839",
+        "notes": "Special dietary requirements",
+        "paymentsClient": [],
+        "paymentsProvider": [],
+        "documents": [],
+        "createdAt": "2025-09-11T15:11:55.177Z",
+        "updatedAt": "2025-09-11T15:11:55.177Z",
+        "__v": 0
+      }
+    ],
+    "payments": [
+      {
+        "_id": "68c2e6bdb3d20506005708d6",
+        "saleId": "68c2e6bbb3d20506005708c5",
+        "type": "provider",
+        "method": "wire_transfer",
+        "amount": 4434,
+        "currency": "USD",
+        "date": "2024-03-16T03:22:33.788Z",
+        "status": "completed",
+        "transactionId": "TXN488507",
+        "reference": "REF484724",
+        "exchangeRate": null,
+        "baseCurrency": null,
+        "fees": {
+          "processing": 36,
+          "exchange": 16,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": null,
+          "cardBrand": "American Express",
+          "bankName": "Wells Fargo",
+          "accountLast4": "9963"
+        },
+        "notes": "Refund processed",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708d7",
+        "saleId": "68c2e6bbb3d20506005708d0",
+        "type": "client",
+        "method": "credit_card",
+        "amount": 244,
+        "currency": "USD",
+        "date": "2024-10-15T22:21:33.564Z",
+        "status": "completed",
+        "transactionId": "TXN393036",
+        "reference": "REF558394",
+        "exchangeRate": 1.18,
+        "baseCurrency": "USD",
+        "fees": {
+          "processing": 36,
+          "exchange": 11,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": null,
+          "cardBrand": null,
+          "bankName": "Chase",
+          "accountLast4": null
+        },
+        "notes": "Refund processed",
+        "createdBy": "68c2e6b1b3d205060057083f",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708d8",
+        "saleId": "68c2e6bbb3d20506005708cb",
+        "type": "client",
+        "method": "debit_card",
+        "amount": 1740,
+        "currency": "EUR",
+        "date": "2024-11-19T06:56:27.749Z",
+        "status": "completed",
+        "transactionId": "TXN893366",
+        "reference": "REF617729",
+        "exchangeRate": 0.87,
+        "baseCurrency": "USD",
+        "fees": {
+          "processing": 42,
+          "exchange": 12,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": null,
+          "cardBrand": null,
+          "bankName": "Chase",
+          "accountLast4": "9865"
+        },
+        "notes": "Refund processed",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708d9",
+        "saleId": "68c2e6bbb3d20506005708cb",
+        "type": "client",
+        "method": "bank_transfer",
+        "amount": 1208,
+        "currency": "CAD",
+        "date": "2023-03-28T17:50:11.598Z",
+        "status": "completed",
+        "transactionId": "TXN293541",
+        "reference": "REF581694",
+        "exchangeRate": null,
+        "baseCurrency": "GBP",
+        "fees": {
+          "processing": 37,
+          "exchange": 0,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": "7202",
+          "cardBrand": null,
+          "bankName": "Bank of America",
+          "accountLast4": null
+        },
+        "notes": "Refund processed",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708da",
+        "saleId": "68c2e6bbb3d20506005708b9",
+        "type": "provider",
+        "method": "cash",
+        "amount": 1685,
+        "currency": "USD",
+        "date": "2024-07-10T10:13:41.456Z",
+        "status": "failed",
+        "transactionId": "TXN679007",
+        "reference": "REF234423",
+        "exchangeRate": null,
+        "baseCurrency": null,
+        "fees": {
+          "processing": 10,
+          "exchange": 5,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": "5811",
+          "cardBrand": "American Express",
+          "bankName": null,
+          "accountLast4": "7716"
+        },
+        "notes": "None",
+        "createdBy": "68c2e6b1b3d205060057083d",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708db",
+        "saleId": "68c2e6bbb3d20506005708ce",
+        "type": "client",
+        "method": "cash",
+        "amount": 1024,
+        "currency": "AUD",
+        "date": "2023-11-07T03:44:48.006Z",
+        "status": "failed",
+        "transactionId": "TXN812472",
+        "reference": "REF304942",
+        "exchangeRate": null,
+        "baseCurrency": "GBP",
+        "fees": {
+          "processing": 16,
+          "exchange": 12,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": "8432",
+          "cardBrand": "Mastercard",
+          "bankName": null,
+          "accountLast4": null
+        },
+        "notes": "Partial payment",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708dc",
+        "saleId": "68c2e6bbb3d20506005708b4",
+        "type": "client",
+        "method": "stripe",
+        "amount": 317,
+        "currency": "AUD",
+        "date": "2025-08-28T05:18:30.940Z",
+        "status": "pending",
+        "transactionId": "TXN304011",
+        "reference": "REF733270",
+        "exchangeRate": 1.02,
+        "baseCurrency": "USD",
+        "fees": {
+          "processing": 27,
+          "exchange": 15,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": null,
+          "cardBrand": "American Express",
+          "bankName": null,
+          "accountLast4": "8450"
+        },
+        "notes": "Partial payment",
+        "createdBy": "68c2e6b1b3d2050600570842",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708dd",
+        "saleId": "68c2e6bbb3d20506005708c0",
+        "type": "provider",
+        "method": "bank_transfer",
+        "amount": 3429,
+        "currency": "AUD",
+        "date": "2024-09-06T10:37:56.308Z",
+        "status": "failed",
+        "transactionId": "TXN648205",
+        "reference": "REF448909",
+        "exchangeRate": null,
+        "baseCurrency": "USD",
+        "fees": {
+          "processing": 9,
+          "exchange": 3,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": "9691",
+          "cardBrand": null,
+          "bankName": null,
+          "accountLast4": "3635"
+        },
+        "notes": "Payment processed successfully",
+        "createdBy": "68c2e6b1b3d2050600570839",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708de",
+        "saleId": "68c2e6bbb3d20506005708ce",
+        "type": "provider",
+        "method": "paypal",
+        "amount": 2904,
+        "currency": "USD",
+        "date": "2025-03-15T11:30:37.770Z",
+        "status": "failed",
+        "transactionId": "TXN550524",
+        "reference": "REF622800",
+        "exchangeRate": null,
+        "baseCurrency": "GBP",
+        "fees": {
+          "processing": 30,
+          "exchange": 14,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": null,
+          "cardBrand": null,
+          "bankName": null,
+          "accountLast4": null
+        },
+        "notes": "Refund processed",
+        "createdBy": "68c2e6b1b3d205060057083f",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708df",
+        "saleId": "68c2e6bbb3d20506005708bc",
+        "type": "provider",
+        "method": "credit_card",
+        "amount": 2515,
+        "currency": "AUD",
+        "date": "2024-04-03T04:01:05.708Z",
+        "status": "completed",
+        "transactionId": "TXN826068",
+        "reference": "REF960372",
+        "exchangeRate": 0.97,
+        "baseCurrency": "AUD",
+        "fees": {
+          "processing": 33,
+          "exchange": 13,
+          "total": 0
+        },
+        "metadata": {
+          "cardLast4": "1260",
+          "cardBrand": null,
+          "bankName": "Wells Fargo",
+          "accountLast4": "3861"
+        },
+        "notes": "Refund processed",
+        "createdBy": "68c2e6b1b3d205060057083d",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:57.112Z",
+        "updatedAt": "2025-09-11T15:11:57.112Z"
+      }
+    ],
+    "providers": [
+      {
+        "_id": "68c2e6b7b3d205060057085c",
+        "name": "Plaza Sydney",
+        "type": "hotel",
+        "contactInfo": {
+          "phone": "+1-555-0101",
+          "email": "provider1@airline.com",
+          "website": "https://www.provider1.com",
+          "address": {
+            "street": "123 Main St",
+            "city": "New York",
+            "state": "TX",
+            "country": "Germany",
+            "zipCode": "10001"
+          },
+          "_id": "68c2e6b7b3d205060057085d"
+        },
+        "description": "Premium airline service in New York. We provide exceptional quality and customer satisfaction.",
+        "rating": 4.71,
+        "totalBookings": 255,
+        "totalRevenue": 15333,
+        "commissionRate": 11.37,
+        "paymentTerms": "net_60",
+        "status": "active",
+        "contractStartDate": "2023-03-05T14:15:53.993Z",
+        "contractEndDate": "2024-08-18T00:50:29.587Z",
+        "specializations": [
+          "business",
+          "luxury",
+          "romantic"
+        ],
+        "certifications": [
+          {
+            "name": "ISO 9001",
+            "issuer": "Safety Council",
+            "expiryDate": "2025-12-21T16:18:00.409Z",
+            "_id": "68c2e6b7b3d205060057085e"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d205060057083f",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.395Z",
+        "updatedAt": "2025-09-11T15:11:51.395Z"
+      },
+      {
+        "_id": "68c2e6b7b3d205060057085f",
+        "name": "Hotel Tokyo",
+        "type": "hotel",
+        "contactInfo": {
+          "phone": "+1-555-0102",
+          "email": "provider2@travel.com",
+          "website": "https://www.provider2.com",
+          "address": {
+            "street": "456 Oak Ave",
+            "city": "Los Angeles",
+            "state": "TX",
+            "country": "France",
+            "zipCode": "10002"
+          },
+          "_id": "68c2e6b7b3d2050600570860"
+        },
+        "description": "Premium insurance service in Los Angeles. We provide exceptional quality and customer satisfaction.",
+        "rating": 4.13,
+        "totalBookings": 464,
+        "totalRevenue": 41678,
+        "commissionRate": 16.67,
+        "paymentTerms": "net_60",
+        "status": "active",
+        "contractStartDate": "2023-06-17T09:03:50.952Z",
+        "contractEndDate": "2024-08-28T03:31:37.616Z",
+        "specializations": [
+          "luxury",
+          "budget",
+          "family"
+        ],
+        "certifications": [
+          {
+            "name": "Customer Service",
+            "issuer": "Quality Board",
+            "expiryDate": "2025-06-23T23:08:38.187Z",
+            "_id": "68c2e6b7b3d2050600570861"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d205060057083a",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.395Z",
+        "updatedAt": "2025-09-11T15:11:51.395Z"
+      },
+      {
+        "_id": "68c2e6b7b3d2050600570862",
+        "name": "Palace Houston",
+        "type": "insurance",
+        "contactInfo": {
+          "phone": "+1-555-0103",
+          "email": "provider3@travel.com",
+          "website": "https://www.provider3.com",
+          "address": {
+            "street": "789 Pine Rd",
+            "city": "Chicago",
+            "state": "IL",
+            "country": "United States",
+            "zipCode": "10003"
+          },
+          "_id": "68c2e6b7b3d2050600570863"
+        },
+        "description": "Premium restaurant service in Chicago. We provide exceptional quality and customer satisfaction.",
+        "rating": 3.02,
+        "totalBookings": 196,
+        "totalRevenue": 17211,
+        "commissionRate": 8.21,
+        "paymentTerms": "immediate",
+        "status": "inactive",
+        "contractStartDate": "2023-05-20T22:35:33.752Z",
+        "contractEndDate": "2024-09-09T12:20:07.186Z",
+        "specializations": [
+          "adventure",
+          "romantic"
+        ],
+        "certifications": [
+          {
+            "name": "Customer Service",
+            "issuer": "Safety Council",
+            "expiryDate": "2024-01-01T13:07:06.710Z",
+            "_id": "68c2e6b7b3d2050600570864"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d2050600570839",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.395Z",
+        "updatedAt": "2025-09-11T15:11:51.395Z"
+      },
+      {
+        "_id": "68c2e6b7b3d2050600570865",
+        "name": "Lodge Amsterdam",
+        "type": "insurance",
+        "contactInfo": {
+          "phone": "+1-555-0104",
+          "email": "provider4@airline.com",
+          "website": "https://www.provider4.com",
+          "address": {
+            "street": "321 Elm St",
+            "city": "Houston",
+            "state": "NY",
+            "country": "Brazil",
+            "zipCode": "10004"
+          },
+          "_id": "68c2e6b7b3d2050600570866"
+        },
+        "description": "Premium tour_guide service in Houston. We provide exceptional quality and customer satisfaction.",
+        "rating": 4.17,
+        "totalBookings": 370,
+        "totalRevenue": 44706,
+        "commissionRate": 14.47,
+        "paymentTerms": "net_15",
+        "status": "inactive",
+        "contractStartDate": "2023-01-08T02:15:45.325Z",
+        "contractEndDate": "2024-10-10T12:19:37.604Z",
+        "specializations": [
+          "luxury",
+          "budget",
+          "adventure"
+        ],
+        "certifications": [
+          {
+            "name": "Travel Safety",
+            "issuer": "Quality Board",
+            "expiryDate": "2025-05-26T02:03:46.598Z",
+            "_id": "68c2e6b7b3d2050600570867"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d2050600570839",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.395Z",
+        "updatedAt": "2025-09-11T15:11:51.395Z"
+      },
+      {
+        "_id": "68c2e6b7b3d2050600570868",
+        "name": "Inn Vienna",
+        "type": "airline",
+        "contactInfo": {
+          "phone": "+1-555-0105",
+          "email": "provider5@hotel.com",
+          "website": "https://www.provider5.com",
+          "address": {
+            "street": "654 Maple Dr",
+            "city": "Phoenix",
+            "state": "CA",
+            "country": "United States",
+            "zipCode": "10005"
+          },
+          "_id": "68c2e6b7b3d2050600570869"
+        },
+        "description": "Premium airline service in Phoenix. We provide exceptional quality and customer satisfaction.",
+        "rating": 4.71,
+        "totalBookings": 434,
+        "totalRevenue": 51477,
+        "commissionRate": 12.63,
+        "paymentTerms": "net_15",
+        "status": "inactive",
+        "contractStartDate": "2023-06-11T16:09:22.184Z",
+        "contractEndDate": "2024-12-16T07:08:48.650Z",
+        "specializations": [
+          "luxury",
+          "business",
+          "budget"
+        ],
+        "certifications": [
+          {
+            "name": "ISO 9001",
+            "issuer": "Safety Council",
+            "expiryDate": "2025-06-04T13:04:15.992Z",
+            "_id": "68c2e6b7b3d205060057086a"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d205060057083d",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.395Z",
+        "updatedAt": "2025-09-11T15:11:51.395Z"
+      },
+      {
+        "_id": "68c2e6b7b3d205060057086b",
+        "name": "Royal Toronto",
+        "type": "restaurant",
+        "contactInfo": {
+          "phone": "+1-555-0106",
+          "email": "provider6@travel.com",
+          "website": "https://www.provider6.com",
+          "address": {
+            "street": "987 Cedar Ln",
+            "city": "Philadelphia",
+            "state": "CA",
+            "country": "Brazil",
+            "zipCode": "10006"
+          },
+          "_id": "68c2e6b7b3d205060057086c"
+        },
+        "description": "Premium insurance service in Philadelphia. We provide exceptional quality and customer satisfaction.",
+        "rating": 3.52,
+        "totalBookings": 68,
+        "totalRevenue": 19376,
+        "commissionRate": 9.28,
+        "paymentTerms": "net_15",
+        "status": "active",
+        "contractStartDate": "2023-01-21T20:11:53.232Z",
+        "contractEndDate": "2025-08-17T13:28:26.564Z",
+        "specializations": [
+          "adventure",
+          "family",
+          "luxury"
+        ],
+        "certifications": [
+          {
+            "name": "Travel Safety",
+            "issuer": "Safety Council",
+            "expiryDate": "2024-03-02T08:07:11.076Z",
+            "_id": "68c2e6b7b3d205060057086d"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d205060057083a",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.396Z",
+        "updatedAt": "2025-09-11T15:11:51.396Z"
+      },
+      {
+        "_id": "68c2e6b7b3d205060057086e",
+        "name": "Resort Houston",
+        "type": "transfer",
+        "contactInfo": {
+          "phone": "+1-555-0107",
+          "email": "provider7@airline.com",
+          "website": "https://www.provider7.com",
+          "address": {
+            "street": "147 Birch Way",
+            "city": "San Antonio",
+            "state": "TX",
+            "country": "Australia",
+            "zipCode": "10007"
+          },
+          "_id": "68c2e6b7b3d205060057086f"
+        },
+        "description": "Premium hotel service in San Antonio. We provide exceptional quality and customer satisfaction.",
+        "rating": 3.29,
+        "totalBookings": 261,
+        "totalRevenue": 43382,
+        "commissionRate": 5.51,
+        "paymentTerms": "net_30",
+        "status": "active",
+        "contractStartDate": "2023-03-30T09:21:07.679Z",
+        "contractEndDate": "2025-03-28T18:12:34.980Z",
+        "specializations": [
+          "business"
+        ],
+        "certifications": [
+          {
+            "name": "Travel Safety",
+            "issuer": "Safety Council",
+            "expiryDate": "2024-12-20T15:32:29.972Z",
+            "_id": "68c2e6b7b3d2050600570870"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d205060057083a",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.396Z",
+        "updatedAt": "2025-09-11T15:11:51.396Z"
+      },
+      {
+        "_id": "68c2e6b7b3d2050600570871",
+        "name": "Hotel Houston",
+        "type": "insurance",
+        "contactInfo": {
+          "phone": "+1-555-0108",
+          "email": "provider8@airline.com",
+          "website": "https://www.provider8.com",
+          "address": {
+            "street": "258 Spruce St",
+            "city": "San Diego",
+            "state": "FL",
+            "country": "Germany",
+            "zipCode": "10008"
+          },
+          "_id": "68c2e6b7b3d2050600570872"
+        },
+        "description": "Premium airline service in San Diego. We provide exceptional quality and customer satisfaction.",
+        "rating": 3.47,
+        "totalBookings": 265,
+        "totalRevenue": 96854,
+        "commissionRate": 18.1,
+        "paymentTerms": "net_30",
+        "status": "active",
+        "contractStartDate": "2023-02-03T19:35:28.279Z",
+        "contractEndDate": "2025-11-01T18:41:03.519Z",
+        "specializations": [
+          "luxury",
+          "budget",
+          "family"
+        ],
+        "certifications": [
+          {
+            "name": "ISO 9001",
+            "issuer": "Safety Council",
+            "expiryDate": "2025-02-27T02:33:55.801Z",
+            "_id": "68c2e6b7b3d2050600570873"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d2050600570840",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.396Z",
+        "updatedAt": "2025-09-11T15:11:51.396Z"
+      },
+      {
+        "_id": "68c2e6b7b3d2050600570874",
+        "name": "Hotel Vienna",
+        "type": "restaurant",
+        "contactInfo": {
+          "phone": "+1-555-0109",
+          "email": "provider9@hotel.com",
+          "website": "https://www.provider9.com",
+          "address": {
+            "street": "369 Willow Ave",
+            "city": "Dallas",
+            "state": "NY",
+            "country": "France",
+            "zipCode": "10009"
+          },
+          "_id": "68c2e6b7b3d2050600570875"
+        },
+        "description": "Premium tour_guide service in Dallas. We provide exceptional quality and customer satisfaction.",
+        "rating": 3.27,
+        "totalBookings": 150,
+        "totalRevenue": 57543,
+        "commissionRate": 15.52,
+        "paymentTerms": "net_15",
+        "status": "active",
+        "contractStartDate": "2023-05-01T22:31:59.898Z",
+        "contractEndDate": "2025-02-03T08:16:00.292Z",
+        "specializations": [
+          "business",
+          "romantic"
+        ],
+        "certifications": [
+          {
+            "name": "ISO 9001",
+            "issuer": "Safety Council",
+            "expiryDate": "2025-05-16T22:04:33.078Z",
+            "_id": "68c2e6b7b3d2050600570876"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d205060057083f",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.396Z",
+        "updatedAt": "2025-09-11T15:11:51.396Z"
+      },
+      {
+        "_id": "68c2e6b7b3d2050600570877",
+        "name": "Royal San Antonio",
+        "type": "excursion",
+        "contactInfo": {
+          "phone": "+1-555-0110",
+          "email": "provider10@airline.com",
+          "website": "https://www.provider10.com",
+          "address": {
+            "street": "741 Poplar Rd",
+            "city": "San Jose",
+            "state": "TX",
+            "country": "United Kingdom",
+            "zipCode": "10010"
+          },
+          "_id": "68c2e6b7b3d2050600570878"
+        },
+        "description": "Premium restaurant service in San Jose. We provide exceptional quality and customer satisfaction.",
+        "rating": 4.51,
+        "totalBookings": 370,
+        "totalRevenue": 86933,
+        "commissionRate": 8.35,
+        "paymentTerms": "immediate",
+        "status": "active",
+        "contractStartDate": "2023-06-03T04:05:57.484Z",
+        "contractEndDate": "2025-06-14T06:54:03.016Z",
+        "specializations": [
+          "family",
+          "business"
+        ],
+        "certifications": [
+          {
+            "name": "Travel Safety",
+            "issuer": "Travel Association",
+            "expiryDate": "2025-11-02T01:57:39.799Z",
+            "_id": "68c2e6b7b3d2050600570879"
+          }
+        ],
+        "createdBy": "68c2e6b1b3d2050600570839",
+        "__v": 0,
+        "createdAt": "2025-09-11T15:11:51.396Z",
+        "updatedAt": "2025-09-11T15:11:51.396Z"
+      }
+    ],
+    "notifications": [
+      {
+        "_id": "68c2e6bdb3d20506005708e1",
+        "clientId": "68c2e6bab3d2050600570894",
+        "saleId": "68c2e6bbb3d20506005708c5",
+        "type": "passport_expiry",
+        "subject": "Trip Reminder - Your Journey Starts Soon!",
+        "emailSent": {
+          "sent": false,
+          "success": true,
+          "messageId": "msg_522438",
+          "error": null,
+          "sentAt": "2025-05-12T05:53:33.625Z"
+        },
+        "whatsappSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "wa_736265",
+          "error": null,
+          "sentAt": null
+        },
+        "content": {
+          "email": "Dear David, this is your passport_expiry notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi David! This is your passport_expiry reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": null,
+          "returnDate": "2025-10-09T04:36:30.893Z",
+          "passportExpiryDate": "2026-11-22T01:09:13.523Z",
+          "daysUntilExpiry": 122,
+          "triggerReason": "automatic"
+        },
+        "status": "pending",
+        "createdBy": "68c2e6b1b3d205060057083c",
+        "createdAt": "2025-09-11T15:11:57.819Z",
+        "updatedAt": "2025-09-11T15:11:57.819Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708e2",
+        "clientId": "68c2e6bab3d2050600570899",
+        "saleId": "68c2e6bbb3d20506005708c7",
+        "type": "custom",
+        "subject": "Booking Confirmation",
+        "emailSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "msg_803903",
+          "error": null,
+          "sentAt": "2023-10-19T04:59:16.197Z"
+        },
+        "whatsappSent": {
+          "sent": true,
+          "success": false,
+          "messageId": null,
+          "error": null,
+          "sentAt": "2024-10-02T15:41:54.898Z"
+        },
+        "content": {
+          "email": "Dear Maria, this is your custom notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi Maria! This is your custom reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": null,
+          "returnDate": null,
+          "passportExpiryDate": "2026-04-22T12:25:41.211Z",
+          "daysUntilExpiry": null,
+          "triggerReason": "manual"
+        },
+        "status": "pending",
+        "createdBy": "68c2e6b1b3d2050600570840",
+        "createdAt": "2025-09-11T15:11:57.820Z",
+        "updatedAt": "2025-09-11T15:11:57.820Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708e3",
+        "clientId": "68c2e6bab3d2050600570895",
+        "saleId": "68c2e6bbb3d20506005708c0",
+        "type": "return_notification",
+        "subject": "Payment Receipt",
+        "emailSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "msg_624469",
+          "error": null,
+          "sentAt": "2023-12-20T12:32:45.662Z"
+        },
+        "whatsappSent": {
+          "sent": false,
+          "success": true,
+          "messageId": null,
+          "error": null,
+          "sentAt": "2023-01-01T14:52:49.286Z"
+        },
+        "content": {
+          "email": "Dear Emily, this is your return_notification notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi Emily! This is your return_notification reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": "2025-10-22T16:49:28.853Z",
+          "returnDate": null,
+          "passportExpiryDate": null,
+          "daysUntilExpiry": null,
+          "triggerReason": "manual"
+        },
+        "status": "pending",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "createdAt": "2025-09-11T15:11:57.822Z",
+        "updatedAt": "2025-09-11T15:11:57.822Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708e4",
+        "clientId": "68c2e6bab3d2050600570899",
+        "saleId": "68c2e6bbb3d20506005708c5",
+        "type": "custom",
+        "subject": "Booking Confirmation",
+        "emailSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "msg_746745",
+          "error": null,
+          "sentAt": null
+        },
+        "whatsappSent": {
+          "sent": true,
+          "success": false,
+          "messageId": "wa_143159",
+          "error": null,
+          "sentAt": null
+        },
+        "content": {
+          "email": "Dear Maria, this is your custom notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi Maria! This is your custom reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": null,
+          "returnDate": "2025-10-19T02:50:29.059Z",
+          "passportExpiryDate": null,
+          "daysUntilExpiry": null,
+          "triggerReason": "client_request"
+        },
+        "status": "pending",
+        "createdBy": null,
+        "createdAt": "2025-09-11T15:11:57.823Z",
+        "updatedAt": "2025-09-11T15:11:57.823Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708e5",
+        "clientId": "68c2e6bab3d2050600570896",
+        "saleId": "68c2e6bbb3d20506005708ce",
+        "type": "trip_reminder",
+        "subject": "Trip Reminder - Your Journey Starts Soon!",
+        "emailSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "msg_771981",
+          "error": null,
+          "sentAt": null
+        },
+        "whatsappSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "wa_676935",
+          "error": null,
+          "sentAt": null
+        },
+        "content": {
+          "email": "Dear Robert, this is your trip_reminder notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi Robert! This is your trip_reminder reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": "2025-11-23T07:36:32.607Z",
+          "returnDate": null,
+          "passportExpiryDate": null,
+          "daysUntilExpiry": 48,
+          "triggerReason": "scheduled"
+        },
+        "status": "pending",
+        "createdBy": null,
+        "createdAt": "2025-09-11T15:11:57.824Z",
+        "updatedAt": "2025-09-11T15:11:57.824Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708e6",
+        "clientId": "68c2e6bab3d2050600570894",
+        "saleId": null,
+        "type": "passport_expiry",
+        "subject": "Passport Expiry Warning",
+        "emailSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "msg_504896",
+          "error": null,
+          "sentAt": null
+        },
+        "whatsappSent": {
+          "sent": false,
+          "success": true,
+          "messageId": "wa_719125",
+          "error": null,
+          "sentAt": null
+        },
+        "content": {
+          "email": "Dear David, this is your passport_expiry notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi David! This is your passport_expiry reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": "2025-10-07T11:30:37.062Z",
+          "returnDate": null,
+          "passportExpiryDate": "2026-07-27T12:41:42.998Z",
+          "daysUntilExpiry": 89,
+          "triggerReason": "manual"
+        },
+        "status": "pending",
+        "createdBy": null,
+        "createdAt": "2025-09-11T15:11:57.825Z",
+        "updatedAt": "2025-09-11T15:11:57.825Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708e7",
+        "clientId": "68c2e6bab3d2050600570892",
+        "saleId": null,
+        "type": "trip_reminder",
+        "subject": "Return Notification - Welcome Back!",
+        "emailSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "msg_503444",
+          "error": null,
+          "sentAt": "2023-05-16T04:09:07.184Z"
+        },
+        "whatsappSent": {
+          "sent": false,
+          "success": true,
+          "messageId": "wa_792784",
+          "error": null,
+          "sentAt": "2024-09-01T22:00:54.324Z"
+        },
+        "content": {
+          "email": "Dear Michael, this is your trip_reminder notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi Michael! This is your trip_reminder reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": "2025-10-04T23:25:54.747Z",
+          "returnDate": "2025-11-09T22:24:22.807Z",
+          "passportExpiryDate": "2025-09-29T15:00:14.197Z",
+          "daysUntilExpiry": null,
+          "triggerReason": "manual"
+        },
+        "status": "pending",
+        "createdBy": "68c2e6b1b3d205060057083a",
+        "createdAt": "2025-09-11T15:11:57.827Z",
+        "updatedAt": "2025-09-11T15:11:57.827Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708e8",
+        "clientId": "68c2e6bab3d2050600570898",
+        "saleId": null,
+        "type": "return_notification",
+        "subject": "Trip Reminder - Your Journey Starts Soon!",
+        "emailSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "msg_603138",
+          "error": null,
+          "sentAt": "2024-05-08T23:43:15.634Z"
+        },
+        "whatsappSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "wa_699010",
+          "error": null,
+          "sentAt": null
+        },
+        "content": {
+          "email": "Dear James, this is your return_notification notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi James! This is your return_notification reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": null,
+          "returnDate": "2025-10-07T05:57:21.383Z",
+          "passportExpiryDate": null,
+          "daysUntilExpiry": null,
+          "triggerReason": "client_request"
+        },
+        "status": "pending",
+        "createdBy": "68c2e6b1b3d2050600570841",
+        "createdAt": "2025-09-11T15:11:57.827Z",
+        "updatedAt": "2025-09-11T15:11:57.827Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708e9",
+        "clientId": "68c2e6bab3d2050600570894",
+        "saleId": null,
+        "type": "custom",
+        "subject": "Return Notification - Welcome Back!",
+        "emailSent": {
+          "sent": false,
+          "success": true,
+          "messageId": "msg_558299",
+          "error": null,
+          "sentAt": "2023-03-28T15:59:24.735Z"
+        },
+        "whatsappSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "wa_476791",
+          "error": null,
+          "sentAt": "2023-11-05T06:55:01.420Z"
+        },
+        "content": {
+          "email": "Dear David, this is your custom notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi David! This is your custom reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": "2025-12-15T11:10:48.559Z",
+          "returnDate": "2025-12-16T17:26:10.943Z",
+          "passportExpiryDate": "2026-05-21T21:50:39.043Z",
+          "daysUntilExpiry": null,
+          "triggerReason": "client_request"
+        },
+        "status": "pending",
+        "createdBy": null,
+        "createdAt": "2025-09-11T15:11:57.828Z",
+        "updatedAt": "2025-09-11T15:11:57.828Z",
+        "__v": 0
+      },
+      {
+        "_id": "68c2e6bdb3d20506005708ea",
+        "clientId": "68c2e6bab3d2050600570892",
+        "saleId": "68c2e6bbb3d20506005708b4",
+        "type": "trip_reminder",
+        "subject": "Return Notification - Welcome Back!",
+        "emailSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "msg_138852",
+          "error": null,
+          "sentAt": "2023-06-04T01:34:57.076Z"
+        },
+        "whatsappSent": {
+          "sent": true,
+          "success": true,
+          "messageId": "wa_975394",
+          "error": null,
+          "sentAt": "2023-06-20T11:21:32.821Z"
+        },
+        "content": {
+          "email": "Dear Michael, this is your trip_reminder notification. Please review the details and contact us if you have any questions.",
+          "whatsapp": "Hi Michael! This is your trip_reminder reminder. Safe travels!"
+        },
+        "metadata": {
+          "tripDate": null,
+          "returnDate": null,
+          "passportExpiryDate": "2025-11-09T06:05:29.022Z",
+          "daysUntilExpiry": 91,
+          "triggerReason": "automatic"
+        },
+        "status": "pending",
+        "createdBy": "68c2e6b1b3d205060057083b",
+        "createdAt": "2025-09-11T15:11:57.828Z",
+        "updatedAt": "2025-09-11T15:11:57.828Z",
+        "__v": 0
+      }
+    ]
+  }
+}

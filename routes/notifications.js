@@ -11,6 +11,7 @@ const {
   testNotification
 } = require('../controllers/notificationController');
 const { authenticate, requireAdminOrSeller, requireAdmin } = require('../middlewares/authMiddleware');
+const { activityLoggers } = require('../middlewares/activityLogMiddleware');
 
 // All notification routes require authentication
 router.use(authenticate);
@@ -20,14 +21,14 @@ router.get('/history', requireAdminOrSeller, getNotificationHistory);
 router.get('/statistics', requireAdminOrSeller, getNotificationStatistics);
 
 // Client notification preferences (admin and seller)
-router.put('/clients/:id/notifications', requireAdminOrSeller, updateClientNotificationPreferences);
+router.put('/clients/:id/notifications', requireAdminOrSeller, activityLoggers.notificationCreate, updateClientNotificationPreferences);
 
 // Manual notification sending (admin and seller)
-router.post('/send', requireAdminOrSeller, sendManualNotification);
-router.post('/resend/:id', requireAdminOrSeller, resendNotification);
+router.post('/send', requireAdminOrSeller, activityLoggers.notificationSend, sendManualNotification);
+router.post('/resend/:id', requireAdminOrSeller, activityLoggers.notificationSend, resendNotification);
 
 // Test notification (admin and seller)
-router.post('/test', requireAdminOrSeller, testNotification);
+router.post('/test', requireAdminOrSeller, activityLoggers.notificationSend, testNotification);
 
 // Cron job management (admin only)
 router.get('/cron/status', requireAdmin, getCronStatus);

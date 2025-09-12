@@ -97,35 +97,52 @@ function getRandomFloat(min, max, decimals = 2) {
 
 // Generate sample data functions
 async function generateUsers() {
-  console.log('Generating Users...');
-  const users = [];
+  console.log('Getting existing users...');
   
-  for (let i = 0; i < 10; i++) {
-    const user = new User({
-      username: `user${i + 1}`,
-      email: sampleEmails[i],
-      password: 'password123', // Will be hashed by pre-save middleware
-      firstName: sampleNames[i],
-      lastName: sampleSurnames[i],
-      phone: samplePhones[i],
-      role: i < 2 ? 'admin' : 'seller', // First 2 are admins
-      isActive: true,
-      preferences: {
-        theme: getRandomElement(['light', 'dark', 'system']),
-        language: 'en',
-        timezone: 'UTC',
-        currency: getRandomElement(currencies),
-        notifications: {
-          email: true,
-          push: true,
-          sms: Math.random() > 0.5
+  // Get existing users instead of creating new ones
+  const existingUsers = await User.find({});
+  
+  if (existingUsers.length === 0) {
+    console.log('No existing users found. Creating sample users...');
+    const users = [];
+    
+    for (let i = 0; i < 10; i++) {
+      const user = new User({
+        username: `user${i + 1}`,
+        email: sampleEmails[i],
+        password: 'password123', // Will be hashed by pre-save middleware
+        firstName: sampleNames[i],
+        lastName: sampleSurnames[i],
+        phone: samplePhones[i],
+        role: i < 2 ? 'admin' : 'seller', // First 2 are admins
+        isActive: true,
+        preferences: {
+          theme: getRandomElement(['light', 'dark', 'system']),
+          language: 'en',
+          timezone: 'UTC',
+          currency: getRandomElement(currencies),
+          notifications: {
+            email: true,
+            push: true,
+            sms: Math.random() > 0.5
+          }
         }
-      }
-    });
-    users.push(user);
+      });
+      users.push(user);
+    }
+    
+    // Save each user individually to trigger pre-save middleware for password hashing
+    const savedUsers = [];
+    for (const user of users) {
+      const savedUser = await user.save();
+      savedUsers.push(savedUser);
+    }
+    
+    return savedUsers;
+  } else {
+    console.log(`Found ${existingUsers.length} existing users. Using them for seeding.`);
+    return existingUsers;
   }
-  
-  return await User.insertMany(users);
 }
 
 async function generateProviders(users) {
@@ -302,10 +319,19 @@ async function generatePassengers(clients, users) {
   console.log('Generating Passengers...');
   const passengers = [];
   
+  // Ensure we have clients to work with
+  if (clients.length === 0) {
+    console.error('No clients available for passenger generation');
+    return [];
+  }
+  
   for (let i = 0; i < 10; i++) {
-    const client = getRandomElement(clients);
+    // Use modulo to ensure we always get a valid client
+    const client = clients[i % clients.length];
     const dob = getRandomDate(new Date(1950, 0, 1), new Date(2010, 11, 31));
     const expirationDate = getRandomDate(new Date(2024, 0, 1), new Date(2030, 11, 31));
+    
+    console.log(`Creating passenger ${i + 1} for client: ${client.name} ${client.surname} (ID: ${client._id})`);
     
     const passenger = new Passenger({
       clientId: client._id,
@@ -528,6 +554,7 @@ async function seedDatabase() {
     await Payment.deleteMany({});
     await Cupo.deleteMany({});
     await Notification.deleteMany({});
+    console.log('Existing data cleared (users preserved).');
     
     // Generate data in dependency order
     const users = await generateUsers();

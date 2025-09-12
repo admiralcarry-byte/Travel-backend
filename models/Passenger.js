@@ -110,7 +110,7 @@ const passengerSchema = new mongoose.Schema({
 
 // Indexes for better query performance
 passengerSchema.index({ clientId: 1 });
-passengerSchema.index({ passportNumber: 1 });
+// passportNumber already indexed by unique: true
 passengerSchema.index({ status: 1 });
 passengerSchema.index({ createdBy: 1 });
 passengerSchema.index({ nationality: 1 });

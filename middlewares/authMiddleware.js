@@ -36,7 +36,10 @@ const authenticate = async (req, res, next) => {
 
     // Attach user info to request
     req.user = {
+      id: decoded.userId,
       userId: decoded.userId,
+      username: user.username,
+      email: user.email,
       role: decoded.role
     };
 

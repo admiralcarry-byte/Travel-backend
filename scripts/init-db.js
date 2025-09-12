@@ -26,9 +26,9 @@ async function initializeDatabase() {
     
     console.log('=== CLEARING EXISTING DATA ===');
     
-    // Clear all collections (except users if they want to keep admin users)
+    // Clear all collections including users
     const collectionsToClear = [
-      'clients', 'passengers', 'providers', 'services', 
+      'users', 'clients', 'passengers', 'providers', 'services', 
       'sales', 'payments', 'cupos', 'notifications'
     ];
     
@@ -38,10 +38,6 @@ async function initializeDatabase() {
         console.log(`✓ Cleared ${collectionName}: ${result.deletedCount} documents removed`);
       }
     }
-    
-    // Optionally clear users (uncomment if needed)
-    // const userResult = await mongoose.connection.db.collection('users').deleteMany({});
-    // console.log(`✓ Cleared users: ${userResult.deletedCount} documents removed`);
     
     console.log('\n=== DATABASE INITIALIZATION COMPLETE ===');
     console.log('✓ All data cleared from database');

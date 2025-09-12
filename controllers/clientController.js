@@ -1,5 +1,6 @@
 const Client = require('../models/Client');
 const Passenger = require('../models/Passenger');
+const Sale = require('../models/Sale');
 const ocrService = require('../services/ocrService');
 const path = require('path');
 
@@ -135,6 +136,81 @@ const getAllClients = async (req, res) => {
     res.status(500).json({
       success: false,
       message: 'Internal server error while fetching clients'
+    });
+  }
+};
+
+// GET /api/clients/with-sales - Get all clients with their sales information
+const getAllClientsWithSales = async (req, res) => {
+  try {
+    const { page = 1, limit = 10, search = '', includeNoSales = 'true' } = req.query;
+    
+    const query = {};
+    if (search) {
+      query.$or = [
+        { name: { $regex: search, $options: 'i' } },
+        { surname: { $regex: search, $options: 'i' } },
+        { email: { $regex: search, $options: 'i' } },
+        { passportNumber: { $regex: search, $options: 'i' } }
+      ];
+    }
+
+    const clients = await Client.find(query)
+      .sort({ createdAt: -1 })
+      .limit(limit * 1)
+      .skip((page - 1) * limit);
+
+    // Get sales for each client
+    const clientsWithSales = await Promise.all(
+      clients.map(async (client) => {
+        const sales = await Sale.find({ clientId: client._id })
+          .populate('services.serviceId', 'title type')
+          .populate('services.providerId', 'name')
+          .sort({ createdAt: -1 });
+
+        // Calculate total sales amount and profit for this client
+        const totalSales = sales.reduce((sum, sale) => sum + (sale.totalSale || 0), 0);
+        const totalProfit = sales.reduce((sum, sale) => sum + (sale.profit || 0), 0);
+        const salesCount = sales.length;
+        
+        // Get the most recent sale
+        const latestSale = sales.length > 0 ? sales[0] : null;
+
+        return {
+          ...client.toObject(),
+          sales,
+          salesCount,
+          totalSales,
+          totalProfit,
+          latestSale,
+          hasSales: salesCount > 0
+        };
+      })
+    );
+
+    // Filter out clients with no sales if requested
+    const filteredClients = includeNoSales === 'true' 
+      ? clientsWithSales 
+      : clientsWithSales.filter(client => client.hasSales);
+
+    const total = await Client.countDocuments(query);
+    const totalWithFilter = includeNoSales === 'true' ? total : clientsWithSales.filter(client => client.hasSales).length;
+
+    res.json({
+      success: true,
+      data: {
+        clients: filteredClients,
+        total: totalWithFilter,
+        page: parseInt(page),
+        pages: Math.ceil(totalWithFilter / limit)
+      }
+    });
+
+  } catch (error) {
+    console.error('Get all clients with sales error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while fetching clients with sales'
     });
   }
 };
@@ -301,6 +377,7 @@ module.exports = {
   createClient,
   getClient,
   getAllClients,
+  getAllClientsWithSales,
   updateClient,
   deleteClient,
   extractPassportData,

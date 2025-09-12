@@ -13,6 +13,8 @@ const paymentRoutes = require('./payments');
 const cupoRoutes = require('./cupos');
 const reportRoutes = require('./reports');
 const notificationRoutes = require('./notifications');
+const systemRoutes = require('./system');
+const activityLogRoutes = require('./activityLogs');
 
 // Mount routes
 router.use('/auth', authRoutes);
@@ -26,5 +28,7 @@ router.use('/payments', paymentRoutes);
 router.use('/cupos', cupoRoutes);
 router.use('/reports', reportRoutes);
 router.use('/notifications', notificationRoutes);
+router.use('/system', systemRoutes);
+router.use('/activity-logs', activityLogRoutes);
 
 module.exports = router;

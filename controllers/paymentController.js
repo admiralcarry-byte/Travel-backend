@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Payment = require('../models/Payment');
 const Sale = require('../models/Sale');
 const currencyService = require('../services/currencyService');
@@ -17,6 +18,11 @@ const recordClientPayment = async (req, res) => {
         success: false,
         message: `Missing required fields: ${missingFields.join(', ')}`
       });
+    }
+
+    // Normalize payment method to lowercase to match enum values
+    if (paymentData.method) {
+      paymentData.method = paymentData.method.toLowerCase();
     }
 
     // Validate sale exists
@@ -117,6 +123,11 @@ const recordProviderPayment = async (req, res) => {
       });
     }
 
+    // Normalize payment method to lowercase to match enum values
+    if (paymentData.method) {
+      paymentData.method = paymentData.method.toLowerCase();
+    }
+
     // Validate sale exists
     const sale = await Sale.findById(paymentData.saleId);
     if (!sale) {
@@ -213,7 +224,7 @@ const getPayments = async (req, res) => {
     
     const query = {};
     
-    if (saleId) {
+    if (saleId && saleId !== 'undefined' && mongoose.Types.ObjectId.isValid(saleId)) {
       query.saleId = saleId;
     }
     

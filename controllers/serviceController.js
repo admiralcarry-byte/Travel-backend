@@ -34,6 +34,9 @@ const createService = async (req, res) => {
       });
     }
 
+    // Add the authenticated user's ID as the creator
+    serviceData.createdBy = req.user.id;
+
     const service = new Service(serviceData);
     await service.save();
 

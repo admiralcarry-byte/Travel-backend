@@ -17,13 +17,31 @@ const createProvider = async (req, res) => {
     }
 
     // Validate contact info fields
-    const contactInfoFields = ['phone', 'email', 'address'];
+    const contactInfoFields = ['phone', 'email'];
     const missingContactFields = contactInfoFields.filter(field => !providerData.contactInfo[field]);
     
     if (missingContactFields.length > 0) {
       return res.status(400).json({
         success: false,
         message: `Missing contact info fields: ${missingContactFields.join(', ')}`
+      });
+    }
+
+    // Validate address fields
+    if (!providerData.contactInfo.address) {
+      return res.status(400).json({
+        success: false,
+        message: 'Address information is required'
+      });
+    }
+
+    const requiredAddressFields = ['street', 'city', 'country'];
+    const missingAddressFields = requiredAddressFields.filter(field => !providerData.contactInfo.address[field]);
+    
+    if (missingAddressFields.length > 0) {
+      return res.status(400).json({
+        success: false,
+        message: `Missing address fields: ${missingAddressFields.join(', ')}`
       });
     }
 
@@ -40,6 +58,9 @@ const createProvider = async (req, res) => {
       });
     }
 
+    // Add the authenticated user's ID as the creator
+    providerData.createdBy = req.user.id;
+
     const provider = new Provider(providerData);
     await provider.save();
 
@@ -54,9 +75,29 @@ const createProvider = async (req, res) => {
     
     if (error.name === 'ValidationError') {
       const errors = Object.values(error.errors).map(err => err.message);
+      
+      // Create a more specific error message based on the first error
+      let specificMessage = 'Validation error';
+      if (errors.length > 0) {
+        const firstError = errors[0];
+        if (firstError.includes('email')) {
+          specificMessage = 'Please enter a valid email address. Make sure to include the domain extension (e.g., .com, .org)';
+        } else if (firstError.includes('phone')) {
+          specificMessage = 'Please enter a valid phone number';
+        } else if (firstError.includes('name')) {
+          specificMessage = 'Please enter a valid provider name';
+        } else if (firstError.includes('type')) {
+          specificMessage = 'Please select a valid provider type';
+        } else if (firstError.includes('required')) {
+          specificMessage = 'Please fill in all required fields';
+        } else {
+          specificMessage = firstError;
+        }
+      }
+      
       return res.status(400).json({
         success: false,
-        message: 'Validation error',
+        message: specificMessage,
         errors
       });
     }

@@ -132,10 +132,6 @@ class OCRService {
         .greyscale()
         .normalize()
         .threshold(128)
-        .morphology({
-          operation: 'open',
-          kernel: { width: 2, height: 2 }
-        })
         .png()
         .toFile(adaptivePath);
       preprocessedImages.push(adaptivePath);
