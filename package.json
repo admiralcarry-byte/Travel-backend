@@ -22,7 +22,7 @@
     "cloudinary": "^2.7.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
-    "express": "^5.1.0",
+    "express": "^4.21.2",
     "express-rate-limit": "^8.1.0",
     "express-validator": "^7.2.1",
     "helmet": "^8.1.0",
@@ -33,9 +33,12 @@
     "multer": "^2.0.2",
     "node-cron": "^4.2.1",
     "nodemon": "^3.1.10",
-    "sharp": "^0.34.3",
+    "sharp": "^0.33.0",
     "tesseract.js": "^6.0.1",
     "twilio": "^5.9.0",
     "winston": "^3.17.0"
+  },
+  "overrides": {
+    "simple-swizzle": "0.2.2"
   }
 }
