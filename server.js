@@ -49,7 +49,7 @@ app.use('/transfer', express.static('public/transfer'));
 app.use('/insurance', express.static('public/insurance'));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URL)
   .then(() => {
     console.log('Connected to MongoDB');
     
