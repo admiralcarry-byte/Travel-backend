@@ -234,6 +234,7 @@ cupoSchema.statics.getStatistics = function(serviceId, startDate, endDate) {
 // Transform output
 cupoSchema.methods.toJSON = function() {
   const cupoObject = this.toObject();
+  cupoObject.id = cupoObject._id; // Include id field for frontend compatibility
   cupoObject.occupancyPercentage = this.occupancyPercentage;
   cupoObject.formattedDate = this.formattedDate;
   cupoObject.availabilityStatus = this.availabilityStatus;

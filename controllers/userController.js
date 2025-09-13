@@ -267,10 +267,40 @@ const createUser = async (req, res) => {
   }
 };
 
+// GET /api/users/sellers - Get all sellers (Admin and Seller access)
+const getSellers = async (req, res) => {
+  try {
+    const sellers = await User.find({ role: 'seller' })
+      .select('_id username email firstName lastName')
+      .sort({ username: 1 });
+
+    res.json({
+      success: true,
+      data: {
+        sellers: sellers.map(seller => ({
+          id: seller._id,
+          _id: seller._id,
+          username: seller.username,
+          email: seller.email,
+          firstName: seller.firstName,
+          lastName: seller.lastName
+        }))
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching sellers:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while fetching sellers'
+    });
+  }
+};
+
 module.exports = {
   getAllUsers,
   getUserById,
   createUser,
   updateUser,
-  deleteUser
+  deleteUser,
+  getSellers
 };

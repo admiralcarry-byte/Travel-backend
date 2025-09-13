@@ -166,10 +166,10 @@ async function generateProviders(users) {
         }
       },
       description: `Premium ${getRandomElement(providerTypes)} service in ${sampleCities[i]}. We provide exceptional quality and customer satisfaction.`,
-      rating: getRandomFloat(3.0, 5.0),
-      totalBookings: getRandomNumber(50, 500),
-      totalRevenue: getRandomNumber(10000, 100000),
-      commissionRate: getRandomFloat(5, 20),
+      rating: getRandomFloat(3.1, 5.0),
+      totalBookings: getRandomNumber(51, 500),
+      totalRevenue: getRandomNumber(10001, 100000),
+      commissionRate: getRandomFloat(5.1, 20),
       paymentTerms: getRandomElement(['immediate', 'net_15', 'net_30', 'net_45', 'net_60']),
       status: getRandomElement(['active', 'active', 'active', 'inactive']), // Mostly active
       contractStartDate: getRandomDate(new Date(2023, 0, 1), new Date(2023, 6, 1)),
@@ -204,14 +204,14 @@ async function generateServices(providers, users) {
       type: provider.type,
       description: `Experience the best ${provider.type} service with our comprehensive package. Includes all amenities and premium features.`,
       providerId: provider._id,
-      cost: cost,
+      cost: Math.max(cost, 1),
       currency: getRandomElement(currencies),
-      markup: markup,
-      duration: getRandomNumber(1, 14),
+      markup: Math.max(markup, 0.1),
+      duration: Math.max(getRandomNumber(1, 14), 1),
       durationUnit: getRandomElement(['hours', 'days']),
       capacity: {
-        min: getRandomNumber(1, 2),
-        max: getRandomNumber(4, 20)
+        min: Math.max(getRandomNumber(1, 2), 1),
+        max: Math.max(getRandomNumber(4, 20), 4)
       },
       location: {
         city: sampleCities[i],
@@ -233,8 +233,8 @@ async function generateServices(providers, users) {
         ]
       },
       requirements: {
-        minAge: getRandomNumber(0, 12),
-        maxAge: getRandomNumber(65, 100),
+        minAge: Math.max(getRandomNumber(0, 12), 1),
+        maxAge: Math.max(getRandomNumber(65, 100), 66),
         documents: getRandomElements(['passport', 'visa', 'id', 'insurance'], getRandomNumber(1, 3)),
         restrictions: getRandomElements(['no smoking', 'dress code', 'age limit'], getRandomNumber(0, 2))
       },
@@ -242,16 +242,16 @@ async function generateServices(providers, users) {
       exclusions: getRandomElements(['alcohol', 'laundry', 'room service', 'minibar'], getRandomNumber(0, 2)),
       cancellationPolicy: {
         freeCancellation: Math.random() > 0.3,
-        freeCancellationHours: getRandomNumber(24, 72),
-        cancellationFee: getRandomNumber(0, 100),
-        refundPercentage: getRandomNumber(0, 100)
+        freeCancellationHours: Math.max(getRandomNumber(24, 72), 24),
+        cancellationFee: getRandomNumber(1, 100),
+        refundPercentage: Math.max(getRandomNumber(0, 100), 1)
       },
       status: getRandomElement(['active', 'active', 'active', 'inactive']),
-      totalBookings: getRandomNumber(10, 200),
-      totalRevenue: getRandomNumber(5000, 50000),
+      totalBookings: Math.max(getRandomNumber(10, 200), 11),
+      totalRevenue: Math.max(getRandomNumber(5000, 50000), 5001),
       rating: {
-        average: getRandomFloat(3.0, 5.0),
-        count: getRandomNumber(5, 100)
+        average: getRandomFloat(3.1, 5.0),
+        count: Math.max(getRandomNumber(5, 100), 6)
       },
       createdBy: getRandomElement(users)._id
     });
@@ -305,7 +305,7 @@ async function generateClients(users) {
         marketingEmails: Math.random() > 0.7
       },
       status: getRandomElement(['active', 'active', 'active', 'inactive']),
-      totalSpent: getRandomNumber(0, 50000),
+      totalSpent: Math.max(getRandomNumber(0, 50000), 1),
       lastTripDate: Math.random() > 0.3 ? getRandomDate(new Date(2023, 0, 1), new Date()) : null,
       createdBy: getRandomElement(users)._id
     });
@@ -368,8 +368,8 @@ async function generateCupos(services, users) {
   
   for (let i = 0; i < 10; i++) {
     const service = getRandomElement(services);
-    const totalSeats = getRandomNumber(10, 100);
-    const reservedSeats = getRandomNumber(0, Math.floor(totalSeats * 0.8));
+    const totalSeats = Math.max(getRandomNumber(10, 100), 11);
+    const reservedSeats = Math.max(getRandomNumber(0, Math.floor(totalSeats * 0.8)), 1);
     
     const cupo = new Cupo({
       serviceId: service._id,
@@ -398,8 +398,14 @@ async function generateSales(clients, passengers, services, providers, users) {
   
   for (let i = 0; i < 10; i++) {
     const client = getRandomElement(clients);
-    const selectedPassengers = getRandomElements(passengers.filter(p => p.clientId.toString() === client._id.toString()), getRandomNumber(1, 3));
-    const selectedServices = getRandomElements(services, getRandomNumber(1, 3));
+    const clientPassengers = passengers.filter(p => p.clientId.toString() === client._id.toString());
+    
+    // Ensure we have at least one passenger for this client, or use any passenger if none found
+    const selectedPassengers = clientPassengers.length > 0 
+      ? getRandomElements(clientPassengers, getRandomNumber(1, Math.min(3, clientPassengers.length)))
+      : getRandomElements(passengers, 1); // Fallback to any passenger if no client-specific ones
+    
+    const selectedServices = getRandomElements(services, getRandomNumber(1, Math.min(3, services.length)));
     
     const passengerSales = selectedPassengers.map(passenger => ({
       passengerId: passenger._id,
@@ -416,20 +422,24 @@ async function generateSales(clients, passengers, services, providers, users) {
       quantity: getRandomNumber(1, 3)
     }));
     
-    const totalSalePrice = passengerSales.reduce((sum, p) => sum + p.price, 0) + 
-                          serviceSales.reduce((sum, s) => sum + (s.priceClient * s.quantity), 0);
-    const totalCost = serviceSales.reduce((sum, s) => sum + (s.costProvider * s.quantity), 0);
-    const profit = totalSalePrice - totalCost;
+    // Calculate expected totals (pre-save middleware will recalculate these)
+    const expectedTotalSalePrice = passengerSales.reduce((sum, p) => sum + p.price, 0) + 
+                                  serviceSales.reduce((sum, s) => sum + (s.priceClient * s.quantity), 0);
+    const expectedTotalCost = serviceSales.reduce((sum, s) => sum + (s.costProvider * s.quantity), 0);
+    
+    // Ensure balances are never 0 by limiting payment amounts
+    // Client balance = totalSalePrice - totalClientPayments (must be > 0)
+    // Provider balance = totalProviderPayments - totalCost (must be > 0)
+    const maxClientPayment = Math.floor(expectedTotalSalePrice * 0.6); // Max 60% of sale price to ensure positive client balance
+    const maxProviderPayment = Math.floor(expectedTotalCost * 0.4); // Max 40% of cost to ensure positive provider balance
     
     const sale = new Sale({
       clientId: client._id,
       passengers: passengerSales,
       services: serviceSales,
-      totalSalePrice: totalSalePrice,
-      totalCost: totalCost,
-      profit: profit,
-      totalClientPayments: getRandomNumber(0, Math.floor(totalSalePrice * 0.8)),
-      totalProviderPayments: getRandomNumber(0, Math.floor(totalCost * 0.6)),
+      // Let pre-save middleware calculate totalSalePrice, totalCost, and profit
+      totalClientPayments: Math.max(getRandomNumber(1, maxClientPayment), 1),
+      totalProviderPayments: Math.max(getRandomNumber(1, maxProviderPayment), 1),
       status: getRandomElement(['open', 'closed', 'cancelled']),
       notes: getRandomElement(['Special dietary requirements', 'Group booking', 'Corporate rate', 'None']),
       createdBy: getRandomElement(users)._id
@@ -437,7 +447,13 @@ async function generateSales(clients, passengers, services, providers, users) {
     sales.push(sale);
   }
   
-  return await Sale.insertMany(sales);
+  // Save each sale individually to ensure pre-save middleware runs
+  const savedSales = [];
+  for (const sale of sales) {
+    const savedSale = await sale.save();
+    savedSales.push(savedSale);
+  }
+  return savedSales;
 }
 
 async function generatePayments(sales, users) {
@@ -446,7 +462,7 @@ async function generatePayments(sales, users) {
   
   for (let i = 0; i < 10; i++) {
     const sale = getRandomElement(sales);
-    const amount = getRandomNumber(100, 5000);
+    const amount = Math.max(getRandomNumber(100, 5000), 101);
     
     const payment = new Payment({
       saleId: sale._id,
@@ -461,9 +477,9 @@ async function generatePayments(sales, users) {
       exchangeRate: Math.random() > 0.7 ? getRandomFloat(0.8, 1.2) : null,
       baseCurrency: Math.random() > 0.7 ? getRandomElement(currencies) : null,
       fees: {
-        processing: getRandomNumber(0, 50),
-        exchange: getRandomNumber(0, 20),
-        total: 0 // Will be calculated by pre-save middleware
+        processing: Math.max(getRandomNumber(0, 50), 1),
+        exchange: Math.max(getRandomNumber(0, 20), 1),
+        total: 2 // Will be calculated by pre-save middleware
       },
       metadata: {
         cardLast4: Math.random() > 0.5 ? getRandomNumber(1000, 9999).toString() : null,
@@ -523,7 +539,7 @@ async function generateNotifications(clients, sales, users) {
         tripDate: Math.random() > 0.5 ? getRandomDate(new Date(), new Date(2025, 11, 31)) : null,
         returnDate: Math.random() > 0.5 ? getRandomDate(new Date(), new Date(2025, 11, 31)) : null,
         passportExpiryDate: Math.random() > 0.5 ? getRandomDate(new Date(), new Date(2026, 11, 31)) : null,
-        daysUntilExpiry: Math.random() > 0.5 ? getRandomNumber(1, 365) : null,
+        daysUntilExpiry: Math.random() > 0.5 ? Math.max(getRandomNumber(1, 365), 2) : null,
         triggerReason: getRandomElement(['scheduled', 'manual', 'automatic', 'client_request'])
       },
       status: 'pending', // Will be updated by pre-save middleware

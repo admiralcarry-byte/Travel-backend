@@ -119,12 +119,24 @@ const getAllCupos = async (req, res) => {
     const cupos = await Cupo.find(query)
       .populate([
         { path: 'serviceId', select: 'title description type providerId cost currency' },
-        { path: 'serviceId.providerId', select: 'name type' },
         { path: 'createdBy', select: 'username email' }
       ])
       .sort({ 'metadata.date': 1, createdAt: -1 })
       .limit(limit * 1)
       .skip((page - 1) * limit);
+
+    // Manually populate provider data for all cupos
+    const Provider = require('../models/Provider');
+    for (let cupo of cupos) {
+      if (cupo.serviceId && cupo.serviceId.providerId) {
+        const provider = await Provider.findById(cupo.serviceId.providerId)
+          .select('name type');
+        
+        if (provider) {
+          cupo.serviceId.providerId = provider;
+        }
+      }
+    }
 
     const total = await Cupo.countDocuments(query);
 
@@ -155,7 +167,6 @@ const getCupo = async (req, res) => {
     const cupo = await Cupo.findById(id)
       .populate([
         { path: 'serviceId', select: 'title description type providerId cost currency' },
-        { path: 'serviceId.providerId', select: 'name type contactInfo' },
         { path: 'createdBy', select: 'username email' }
       ]);
     
@@ -164,6 +175,17 @@ const getCupo = async (req, res) => {
         success: false,
         message: 'Cupo not found'
       });
+    }
+
+    // Manually populate the provider data
+    if (cupo.serviceId && cupo.serviceId.providerId) {
+      const Provider = require('../models/Provider');
+      const provider = await Provider.findById(cupo.serviceId.providerId)
+        .select('name type contactInfo');
+      
+      if (provider) {
+        cupo.serviceId.providerId = provider;
+      }
     }
 
     res.json({

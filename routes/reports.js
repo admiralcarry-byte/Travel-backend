@@ -5,7 +5,10 @@ const {
   getProfitReport,
   getBalancesReport,
   getTopServicesReport,
-  getKPIs
+  getKPIs,
+  getClientBalance,
+  getProviderBalance,
+  clearCache
 } = require('../controllers/reportController');
 const { authenticate, requireAdminOrSeller } = require('../middlewares/authMiddleware');
 
@@ -19,5 +22,8 @@ router.get('/profit', getProfitReport);
 router.get('/balances', getBalancesReport);
 router.get('/top-services', getTopServicesReport);
 router.get('/kpis', getKPIs);
+router.get('/client-balance', getClientBalance);
+router.get('/provider-balance', getProviderBalance);
+router.get('/clear-cache', clearCache);
 
 module.exports = router;

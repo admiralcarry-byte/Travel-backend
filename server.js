@@ -14,10 +14,17 @@ app.use(cors());
 // Serve static files from uploads directory
 app.use('/uploads', express.static('uploads'));
 
+// Serve static files from public directory
+app.use('/airline', express.static('public/airline'));
+app.use('/hotel', express.static('public/hotel'));
+app.use('/excursion', express.static('public/excursion'));
+app.use('/transfer', express.static('public/transfer'));
+app.use('/insurance', express.static('public/insurance'));
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
-    console.log('Connected to MongoDB Atlas');
+    console.log('Connected to MongoDB');
     
     // Start cron jobs after successful database connection
     cronJobs.start();

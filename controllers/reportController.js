@@ -32,10 +32,13 @@ const getSalesReport = async (req, res) => {
   try {
     const { period = 'monthly', startDate, endDate, sellerId } = req.query;
     
+    console.log('📈 [BACKEND] Sales Report API called with params:', { period, startDate, endDate, sellerId });
+    
     const cacheKey = getCacheKey('sales', { period, startDate, endDate, sellerId });
     const cachedData = getCachedData(cacheKey);
     
     if (cachedData) {
+      console.log('📈 [BACKEND] Returning cached sales data:', cachedData);
       return res.json({
         success: true,
         data: cachedData,
@@ -48,8 +51,16 @@ const getSalesReport = async (req, res) => {
     
     if (startDate || endDate) {
       matchConditions.createdAt = {};
-      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
-      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+      if (startDate) {
+        // Start from beginning of start date in local timezone
+        const startDateObj = new Date(startDate + 'T00:00:00');
+        matchConditions.createdAt.$gte = startDateObj;
+      }
+      if (endDate) {
+        // End at end of end date in local timezone
+        const endDateObj = new Date(endDate + 'T23:59:59.999');
+        matchConditions.createdAt.$lte = endDateObj;
+      }
     }
     
     if (sellerId) {
@@ -179,6 +190,11 @@ const getSalesReport = async (req, res) => {
       detailedData: salesData
     };
 
+    console.log('📈 [BACKEND] Sales Report data being sent to frontend:');
+    console.log('  📊 Summary:', result.summary);
+    console.log('  📈 Chart Data:', result.chartData);
+    console.log('  📋 Detailed Data Count:', result.detailedData.length);
+
     setCachedData(cacheKey, result);
 
     res.set('Cache-Control', 'public, max-age=300'); // 5 minutes cache
@@ -201,10 +217,13 @@ const getProfitReport = async (req, res) => {
   try {
     const { sellerId, period = 'monthly', startDate, endDate } = req.query;
     
+    console.log('💵 [BACKEND] Profit Report API called with params:', { sellerId, period, startDate, endDate });
+    
     const cacheKey = getCacheKey('profit', { sellerId, period, startDate, endDate });
     const cachedData = getCachedData(cacheKey);
     
     if (cachedData) {
+      console.log('💵 [BACKEND] Returning cached profit data:', cachedData);
       return res.json({
         success: true,
         data: cachedData,
@@ -217,8 +236,16 @@ const getProfitReport = async (req, res) => {
     
     if (startDate || endDate) {
       matchConditions.createdAt = {};
-      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
-      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+      if (startDate) {
+        // Start from beginning of start date in local timezone
+        const startDateObj = new Date(startDate + 'T00:00:00');
+        matchConditions.createdAt.$gte = startDateObj;
+      }
+      if (endDate) {
+        // End at end of end date in local timezone
+        const endDateObj = new Date(endDate + 'T23:59:59.999');
+        matchConditions.createdAt.$lte = endDateObj;
+      }
     }
     
     if (sellerId) {
@@ -303,6 +330,11 @@ const getProfitReport = async (req, res) => {
       detailedData: profitData
     };
 
+    console.log('💵 [BACKEND] Profit Report data being sent to frontend:');
+    console.log('  📊 Summary:', result.summary);
+    console.log('  📈 Chart Data:', result.chartData);
+    console.log('  📋 Detailed Data Count:', result.detailedData.length);
+
     setCachedData(cacheKey, result);
 
     res.set('Cache-Control', 'public, max-age=300');
@@ -341,8 +373,16 @@ const getBalancesReport = async (req, res) => {
     
     if (startDate || endDate) {
       matchConditions.createdAt = {};
-      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
-      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+      if (startDate) {
+        // Start from beginning of start date in local timezone
+        const startDateObj = new Date(startDate + 'T00:00:00');
+        matchConditions.createdAt.$gte = startDateObj;
+      }
+      if (endDate) {
+        // End at end of end date in local timezone
+        const endDateObj = new Date(endDate + 'T23:59:59.999');
+        matchConditions.createdAt.$lte = endDateObj;
+      }
     }
 
     const pipeline = [
@@ -474,6 +514,8 @@ const getBalancesReport = async (req, res) => {
         values: [balance.totalClientBalance, Math.abs(balance.totalProviderBalance)]
       }
     };
+    console.log('result : ', result);
+    
 
     setCachedData(cacheKey, result);
 
@@ -513,8 +555,16 @@ const getTopServicesReport = async (req, res) => {
     
     if (startDate || endDate) {
       matchConditions.createdAt = {};
-      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
-      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+      if (startDate) {
+        // Start from beginning of start date in local timezone
+        const startDateObj = new Date(startDate + 'T00:00:00');
+        matchConditions.createdAt.$gte = startDateObj;
+      }
+      if (endDate) {
+        // End at end of end date in local timezone
+        const endDateObj = new Date(endDate + 'T23:59:59.999');
+        matchConditions.createdAt.$lte = endDateObj;
+      }
     }
 
     const pipeline = [
@@ -612,10 +662,13 @@ const getKPIs = async (req, res) => {
   try {
     const { period = 'monthly', startDate, endDate, sellerId } = req.query;
     
+    console.log('📊 [BACKEND] KPIs API called with params:', { period, startDate, endDate, sellerId });
+    
     const cacheKey = getCacheKey('kpis', { period, startDate, endDate, sellerId });
     const cachedData = getCachedData(cacheKey);
     
     if (cachedData) {
+      console.log('📊 [BACKEND] Returning cached KPIs data:', cachedData);
       return res.json({
         success: true,
         data: cachedData,
@@ -628,8 +681,18 @@ const getKPIs = async (req, res) => {
     
     if (startDate || endDate) {
       matchConditions.createdAt = {};
-      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
-      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+      if (startDate) {
+        // Start from beginning of start date - use UTC to avoid timezone issues
+        const startDateObj = new Date(startDate + 'T00:00:00.000Z');
+        matchConditions.createdAt.$gte = startDateObj;
+        console.log('📊 [BACKEND] Start date filter:', startDateObj.toISOString());
+      }
+      if (endDate) {
+        // End at end of end date - use UTC to avoid timezone issues
+        const endDateObj = new Date(endDate + 'T23:59:59.999Z');
+        matchConditions.createdAt.$lte = endDateObj;
+        console.log('📊 [BACKEND] End date filter:', endDateObj.toISOString());
+      }
     }
     
     if (sellerId) {
@@ -696,6 +759,22 @@ const getKPIs = async (req, res) => {
       profitMargin: 0
     };
 
+    console.log('📊 [BACKEND] Raw aggregation result:', kpiData);
+    console.log('📊 [BACKEND] Match conditions used:', JSON.stringify(matchConditions, null, 2));
+    console.log('📊 [BACKEND] Pipeline used:', JSON.stringify(pipeline, null, 2));
+    console.log('📊 [BACKEND] Final KPIs data being sent to frontend:');
+    console.log('  💰 Total Sales:', kpis.totalSales);
+    console.log('  💵 Total Cost:', kpis.totalCost);
+    console.log('  📈 Total Profit:', kpis.totalProfit);
+    console.log('  📋 Sale Count:', kpis.saleCount);
+    console.log('  📊 Profit Margin:', kpis.profitMargin + '%');
+    console.log('  💳 Client Payments:', kpis.totalClientPayments);
+    console.log('  🏢 Provider Payments:', kpis.totalProviderPayments);
+    console.log('  👥 Client Balance:', kpis.totalClientBalance);
+    console.log('  🏭 Provider Balance:', kpis.totalProviderBalance);
+    console.log('  📊 Average Sale Value:', kpis.avgSaleValue);
+    console.log('  📈 Average Profit:', kpis.avgProfit);
+
     setCachedData(cacheKey, kpis);
 
     res.set('Cache-Control', 'public, max-age=300');
@@ -713,10 +792,192 @@ const getKPIs = async (req, res) => {
   }
 };
 
+// GET /api/reports/clear-cache - Clear all cached data
+const clearCache = async (req, res) => {
+  try {
+    cache.clear();
+    res.json({
+      success: true,
+      message: 'Cache cleared successfully'
+    });
+  } catch (error) {
+    console.error('Clear cache error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while clearing cache'
+    });
+  }
+};
+
+// GET /api/reports/client-balance - Get client balance only
+const getClientBalance = async (req, res) => {
+  try {
+    const { startDate, endDate, sellerId } = req.query;
+    
+    console.log('👥 [BACKEND] Client Balance API called with params:', { startDate, endDate, sellerId });
+    
+    const cacheKey = getCacheKey('client-balance', { startDate, endDate, sellerId });
+    const cachedData = getCachedData(cacheKey);
+    
+    if (cachedData) {
+      console.log('👥 [BACKEND] Returning cached client balance data:', cachedData);
+      return res.json({
+        success: true,
+        data: cachedData,
+        cached: true
+      });
+    }
+
+    // Build match conditions
+    const matchConditions = {};
+    
+    if (startDate || endDate) {
+      matchConditions.createdAt = {};
+      if (startDate) {
+        const startDateObj = new Date(startDate + 'T00:00:00.000Z');
+        matchConditions.createdAt.$gte = startDateObj;
+        console.log('👥 [BACKEND] Start date filter:', startDateObj.toISOString());
+      }
+      if (endDate) {
+        const endDateObj = new Date(endDate + 'T23:59:59.999Z');
+        matchConditions.createdAt.$lte = endDateObj;
+        console.log('👥 [BACKEND] End date filter:', endDateObj.toISOString());
+      }
+    }
+    
+    if (sellerId) {
+      matchConditions.createdBy = sellerId;
+    }
+
+    const pipeline = [
+      { $match: matchConditions },
+      {
+        $group: {
+          _id: null,
+          totalClientBalance: { $sum: '$clientBalance' },
+          totalClientPayments: { $sum: '$totalClientPayments' },
+          totalSalePrice: { $sum: '$totalSalePrice' },
+          saleCount: { $sum: 1 }
+        }
+      }
+    ];
+
+    const balanceData = await Sale.aggregate(pipeline);
+    const result = balanceData[0] || {
+      totalClientBalance: 0,
+      totalClientPayments: 0,
+      totalSalePrice: 0,
+      saleCount: 0
+    };
+
+    console.log('👥 [BACKEND] Raw client balance aggregation:', balanceData);
+    console.log('👥 [BACKEND] Final client balance data:', result);
+
+    setCachedData(cacheKey, result);
+
+    res.set('Cache-Control', 'public, max-age=300');
+    res.json({
+      success: true,
+      data: result
+    });
+
+  } catch (error) {
+    console.error('Client balance error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while calculating client balance'
+    });
+  }
+};
+
+// GET /api/reports/provider-balance - Get provider balance only
+const getProviderBalance = async (req, res) => {
+  try {
+    const { startDate, endDate, sellerId } = req.query;
+    
+    console.log('🏭 [BACKEND] Provider Balance API called with params:', { startDate, endDate, sellerId });
+    
+    const cacheKey = getCacheKey('provider-balance', { startDate, endDate, sellerId });
+    const cachedData = getCachedData(cacheKey);
+    
+    if (cachedData) {
+      console.log('🏭 [BACKEND] Returning cached provider balance data:', cachedData);
+      return res.json({
+        success: true,
+        data: cachedData,
+        cached: true
+      });
+    }
+
+    // Build match conditions
+    const matchConditions = {};
+    
+    if (startDate || endDate) {
+      matchConditions.createdAt = {};
+      if (startDate) {
+        const startDateObj = new Date(startDate + 'T00:00:00.000Z');
+        matchConditions.createdAt.$gte = startDateObj;
+        console.log('🏭 [BACKEND] Start date filter:', startDateObj.toISOString());
+      }
+      if (endDate) {
+        const endDateObj = new Date(endDate + 'T23:59:59.999Z');
+        matchConditions.createdAt.$lte = endDateObj;
+        console.log('🏭 [BACKEND] End date filter:', endDateObj.toISOString());
+      }
+    }
+    
+    if (sellerId) {
+      matchConditions.createdBy = sellerId;
+    }
+
+    const pipeline = [
+      { $match: matchConditions },
+      {
+        $group: {
+          _id: null,
+          totalProviderBalance: { $sum: '$providerBalance' },
+          totalProviderPayments: { $sum: '$totalProviderPayments' },
+          totalCost: { $sum: '$totalCost' },
+          saleCount: { $sum: 1 }
+        }
+      }
+    ];
+
+    const balanceData = await Sale.aggregate(pipeline);
+    const result = balanceData[0] || {
+      totalProviderBalance: 0,
+      totalProviderPayments: 0,
+      totalCost: 0,
+      saleCount: 0
+    };
+
+    console.log('🏭 [BACKEND] Raw provider balance aggregation:', balanceData);
+    console.log('🏭 [BACKEND] Final provider balance data:', result);
+
+    setCachedData(cacheKey, result);
+
+    res.set('Cache-Control', 'public, max-age=300');
+    res.json({
+      success: true,
+      data: result
+    });
+
+  } catch (error) {
+    console.error('Provider balance error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while calculating provider balance'
+    });
+  }
+};
+
 module.exports = {
   getSalesReport,
   getProfitReport,
   getBalancesReport,
   getTopServicesReport,
-  getKPIs
+  getKPIs,
+  getClientBalance,
+  getProviderBalance,
+  clearCache
 };
