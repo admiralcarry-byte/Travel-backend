@@ -250,7 +250,11 @@ const activityLoggers = {
   documentUpload: logActivity('document_upload', 'document', (req, data) => 
     `Document uploaded: ${req.file?.originalname || 'Unknown file'}`),
   passportOcr: logActivity('passport_ocr', 'passport', (req, data) => 
-    `Passport OCR processed: ${req.file?.originalname || 'Unknown file'}`)
+    `Passport OCR processed: ${req.file?.originalname || 'Unknown file'}`),
+
+  // Report actions
+  reportView: logActivity('report_view', 'report', (req, data) => 
+    `Viewed report: ${req.path} with filters: ${JSON.stringify(req.query)}`)
 };
 
 /**

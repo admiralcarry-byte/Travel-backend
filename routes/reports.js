@@ -1,29 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const {
-  getSalesReport,
-  getProfitReport,
-  getBalancesReport,
-  getTopServicesReport,
-  getKPIs,
-  getClientBalance,
-  getProviderBalance,
-  clearCache
+  getBankTransferPaymentsReport,
+  getSellerPaymentSummary,
+  getReconciliationReport
 } = require('../controllers/reportController');
-const { authenticate, requireAdminOrSeller } = require('../middlewares/authMiddleware');
+const { authenticate, requireAdmin } = require('../middlewares/authMiddleware');
+const { activityLoggers } = require('../middlewares/activityLogMiddleware');
 
-// All reporting routes require authentication
+// All report routes require authentication and admin access
 router.use(authenticate);
-router.use(requireAdminOrSeller);
+router.use(requireAdmin);
 
-// Reporting endpoints
-router.get('/sales', getSalesReport);
-router.get('/profit', getProfitReport);
-router.get('/balances', getBalancesReport);
-router.get('/top-services', getTopServicesReport);
-router.get('/kpis', getKPIs);
-router.get('/client-balance', getClientBalance);
-router.get('/provider-balance', getProviderBalance);
-router.get('/clear-cache', clearCache);
+// Payment reports routes
+router.get('/payments/bank-transfers', activityLoggers.reportView, getBankTransferPaymentsReport);
+router.get('/payments/seller-summary', activityLoggers.reportView, getSellerPaymentSummary);
+router.get('/payments/reconciliation', activityLoggers.reportView, getReconciliationReport);
 
 module.exports = router;
