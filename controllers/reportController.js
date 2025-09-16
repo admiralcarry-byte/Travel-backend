@@ -547,8 +547,445 @@ const getReconciliationReport = async (req, res) => {
   }
 };
 
+// GET /api/reports/kpis - Get KPI data for dashboard
+const getKPIs = async (req, res) => {
+  try {
+    const { 
+      startDate, 
+      endDate, 
+      sellerId,
+      period = 'monthly'
+    } = req.query;
+
+    // Build match conditions
+    const matchConditions = {};
+    
+    // Add date filter
+    if (startDate || endDate) {
+      matchConditions.createdAt = {};
+      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
+      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+    }
+
+    // Add seller filter
+    if (sellerId && mongoose.Types.ObjectId.isValid(sellerId)) {
+      matchConditions.createdBy = new mongoose.Types.ObjectId(sellerId);
+    }
+
+    // Get sales statistics
+    const salesStats = await Sale.aggregate([
+      { $match: matchConditions },
+      {
+        $group: {
+          _id: null,
+          totalSales: { $sum: '$totalSalePrice' },
+          totalCost: { $sum: '$totalCost' },
+          totalProfit: { $sum: '$profit' },
+          saleCount: { $sum: 1 },
+          totalClientPayments: { $sum: '$totalClientPayments' },
+          totalProviderPayments: { $sum: '$totalProviderPayments' },
+          totalClientBalance: { $sum: '$clientBalance' },
+          totalProviderBalance: { $sum: '$providerBalance' }
+        }
+      }
+    ]);
+
+    const stats = salesStats.length > 0 ? salesStats[0] : {
+      totalSales: 0,
+      totalCost: 0,
+      totalProfit: 0,
+      saleCount: 0,
+      totalClientPayments: 0,
+      totalProviderPayments: 0,
+      totalClientBalance: 0,
+      totalProviderBalance: 0
+    };
+
+    // Calculate profit margin
+    const profitMargin = stats.totalSales > 0 ? 
+      ((stats.totalProfit / stats.totalSales) * 100).toFixed(2) : 0;
+
+    const kpis = {
+      totalSales: stats.totalSales,
+      totalProfit: stats.totalProfit,
+      saleCount: stats.saleCount,
+      profitMargin: parseFloat(profitMargin),
+      totalClientPayments: stats.totalClientPayments,
+      totalProviderPayments: stats.totalProviderPayments,
+      totalClientBalance: stats.totalClientBalance,
+      totalProviderBalance: stats.totalProviderBalance
+    };
+
+    res.json({
+      success: true,
+      data: kpis
+    });
+
+  } catch (error) {
+    console.error('Get KPIs error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while generating KPIs'
+    });
+  }
+};
+
+// GET /api/reports/sales - Get sales data for charts
+const getSalesData = async (req, res) => {
+  try {
+    const { 
+      startDate, 
+      endDate, 
+      sellerId,
+      period = 'monthly'
+    } = req.query;
+
+    // Build match conditions
+    const matchConditions = {};
+    
+    if (startDate || endDate) {
+      matchConditions.createdAt = {};
+      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
+      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+    }
+
+    if (sellerId && mongoose.Types.ObjectId.isValid(sellerId)) {
+      matchConditions.createdBy = new mongoose.Types.ObjectId(sellerId);
+    }
+
+    // Group by period
+    let groupFormat;
+    if (period === 'daily') {
+      groupFormat = { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } };
+    } else if (period === 'weekly') {
+      groupFormat = { $dateToString: { format: "%Y-W%U", date: "$createdAt" } };
+    } else { // monthly
+      groupFormat = { $dateToString: { format: "%Y-%m", date: "$createdAt" } };
+    }
+
+    const salesData = await Sale.aggregate([
+      { $match: matchConditions },
+      {
+        $group: {
+          _id: groupFormat,
+          totalSales: { $sum: '$totalSalePrice' },
+          totalProfit: { $sum: '$profit' },
+          count: { $sum: 1 }
+        }
+      },
+      { $sort: { _id: 1 } }
+    ]);
+
+    res.json({
+      success: true,
+      data: salesData
+    });
+
+  } catch (error) {
+    console.error('Get sales data error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while generating sales data'
+    });
+  }
+};
+
+// GET /api/reports/profit - Get profit data for charts
+const getProfitData = async (req, res) => {
+  try {
+    const { 
+      startDate, 
+      endDate, 
+      sellerId,
+      period = 'monthly'
+    } = req.query;
+
+    // Build match conditions
+    const matchConditions = {};
+    
+    if (startDate || endDate) {
+      matchConditions.createdAt = {};
+      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
+      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+    }
+
+    if (sellerId && mongoose.Types.ObjectId.isValid(sellerId)) {
+      matchConditions.createdBy = new mongoose.Types.ObjectId(sellerId);
+    }
+
+    // Group by period
+    let groupFormat;
+    if (period === 'daily') {
+      groupFormat = { $dateToString: { format: "%Y-%m-%d", date: "$createdAt" } };
+    } else if (period === 'weekly') {
+      groupFormat = { $dateToString: { format: "%Y-W%U", date: "$createdAt" } };
+    } else { // monthly
+      groupFormat = { $dateToString: { format: "%Y-%m", date: "$createdAt" } };
+    }
+
+    const profitData = await Sale.aggregate([
+      { $match: matchConditions },
+      {
+        $group: {
+          _id: groupFormat,
+          totalProfit: { $sum: '$profit' },
+          totalCost: { $sum: '$totalCost' },
+          totalSales: { $sum: '$totalSalePrice' }
+        }
+      },
+      { $sort: { _id: 1 } }
+    ]);
+
+    res.json({
+      success: true,
+      data: profitData
+    });
+
+  } catch (error) {
+    console.error('Get profit data error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while generating profit data'
+    });
+  }
+};
+
+// GET /api/reports/balances - Get balance data
+const getBalancesData = async (req, res) => {
+  try {
+    const { 
+      startDate, 
+      endDate, 
+      sellerId
+    } = req.query;
+
+    // Build match conditions
+    const matchConditions = {};
+    
+    if (startDate || endDate) {
+      matchConditions.createdAt = {};
+      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
+      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+    }
+
+    if (sellerId && mongoose.Types.ObjectId.isValid(sellerId)) {
+      matchConditions.createdBy = new mongoose.Types.ObjectId(sellerId);
+    }
+
+    const balancesData = await Sale.aggregate([
+      { $match: matchConditions },
+      {
+        $group: {
+          _id: null,
+          totalClientBalance: { $sum: '$clientBalance' },
+          totalProviderBalance: { $sum: '$providerBalance' },
+          totalClientPayments: { $sum: '$totalClientPayments' },
+          totalProviderPayments: { $sum: '$totalProviderPayments' }
+        }
+      }
+    ]);
+
+    const data = balancesData.length > 0 ? balancesData[0] : {
+      totalClientBalance: 0,
+      totalProviderBalance: 0,
+      totalClientPayments: 0,
+      totalProviderPayments: 0
+    };
+
+    res.json({
+      success: true,
+      data: data
+    });
+
+  } catch (error) {
+    console.error('Get balances data error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while generating balances data'
+    });
+  }
+};
+
+// GET /api/reports/client-balance - Get client balance data
+const getClientBalanceData = async (req, res) => {
+  try {
+    const { 
+      startDate, 
+      endDate, 
+      sellerId
+    } = req.query;
+
+    // Build match conditions
+    const matchConditions = {};
+    
+    if (startDate || endDate) {
+      matchConditions.createdAt = {};
+      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
+      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+    }
+
+    if (sellerId && mongoose.Types.ObjectId.isValid(sellerId)) {
+      matchConditions.createdBy = new mongoose.Types.ObjectId(sellerId);
+    }
+
+    const clientBalanceData = await Sale.aggregate([
+      { $match: matchConditions },
+      {
+        $group: {
+          _id: null,
+          totalClientBalance: { $sum: '$clientBalance' },
+          totalClientPayments: { $sum: '$totalClientPayments' },
+          totalSales: { $sum: '$totalSalePrice' }
+        }
+      }
+    ]);
+
+    const data = clientBalanceData.length > 0 ? clientBalanceData[0] : {
+      totalClientBalance: 0,
+      totalClientPayments: 0,
+      totalSales: 0
+    };
+
+    res.json({
+      success: true,
+      data: data
+    });
+
+  } catch (error) {
+    console.error('Get client balance data error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while generating client balance data'
+    });
+  }
+};
+
+// GET /api/reports/provider-balance - Get provider balance data
+const getProviderBalanceData = async (req, res) => {
+  try {
+    const { 
+      startDate, 
+      endDate, 
+      sellerId
+    } = req.query;
+
+    // Build match conditions
+    const matchConditions = {};
+    
+    if (startDate || endDate) {
+      matchConditions.createdAt = {};
+      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
+      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+    }
+
+    if (sellerId && mongoose.Types.ObjectId.isValid(sellerId)) {
+      matchConditions.createdBy = new mongoose.Types.ObjectId(sellerId);
+    }
+
+    const providerBalanceData = await Sale.aggregate([
+      { $match: matchConditions },
+      {
+        $group: {
+          _id: null,
+          totalProviderBalance: { $sum: '$providerBalance' },
+          totalProviderPayments: { $sum: '$totalProviderPayments' },
+          totalCost: { $sum: '$totalCost' }
+        }
+      }
+    ]);
+
+    const data = providerBalanceData.length > 0 ? providerBalanceData[0] : {
+      totalProviderBalance: 0,
+      totalProviderPayments: 0,
+      totalCost: 0
+    };
+
+    res.json({
+      success: true,
+      data: data
+    });
+
+  } catch (error) {
+    console.error('Get provider balance data error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while generating provider balance data'
+    });
+  }
+};
+
+// GET /api/reports/top-services - Get top services data
+const getTopServicesData = async (req, res) => {
+  try {
+    const { 
+      startDate, 
+      endDate, 
+      sellerId,
+      limit = 10
+    } = req.query;
+
+    // Build match conditions
+    const matchConditions = {};
+    
+    if (startDate || endDate) {
+      matchConditions.createdAt = {};
+      if (startDate) matchConditions.createdAt.$gte = new Date(startDate);
+      if (endDate) matchConditions.createdAt.$lte = new Date(endDate);
+    }
+
+    if (sellerId && mongoose.Types.ObjectId.isValid(sellerId)) {
+      matchConditions.createdBy = new mongoose.Types.ObjectId(sellerId);
+    }
+
+    const topServicesData = await Sale.aggregate([
+      { $match: matchConditions },
+      { $unwind: '$services' },
+      {
+        $lookup: {
+          from: 'services',
+          localField: 'services.serviceId',
+          foreignField: '_id',
+          as: 'service'
+        }
+      },
+      { $unwind: '$service' },
+      {
+        $group: {
+          _id: '$service._id',
+          serviceName: { $first: '$service.title' },
+          totalSales: { $sum: { $multiply: ['$services.priceClient', '$services.quantity'] } },
+          totalCost: { $sum: { $multiply: ['$services.costProvider', '$services.quantity'] } },
+          totalProfit: { $sum: { $multiply: [{ $subtract: ['$services.priceClient', '$services.costProvider'] }, '$services.quantity'] } },
+          saleCount: { $sum: 1 }
+        }
+      },
+      { $sort: { totalSales: -1 } },
+      { $limit: parseInt(limit) }
+    ]);
+
+    res.json({
+      success: true,
+      data: topServicesData
+    });
+
+  } catch (error) {
+    console.error('Get top services data error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error while generating top services data'
+    });
+  }
+};
+
 module.exports = {
   getBankTransferPaymentsReport,
   getSellerPaymentSummary,
-  getReconciliationReport
+  getReconciliationReport,
+  getKPIs,
+  getSalesData,
+  getProfitData,
+  getBalancesData,
+  getClientBalanceData,
+  getProviderBalanceData,
+  getTopServicesData
 };
